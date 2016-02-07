@@ -1,0 +1,151 @@
+" -------------------------- VUNDLE SETUP ---------------------------------
+filetype off
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin('~/.vim/bundle')
+
+Plugin 'VundleVim/Vundle.vim'
+
+Plugin 'scrooloose/nerdtree'
+Plugin 'jistr/vim-nerdtree-tabs'
+
+Plugin 'scrooloose/syntastic'
+Plugin 'Valloric/YouCompleteMe'
+
+Plugin 'bling/vim-airline'
+Plugin 'kien/ctrlp.vim'
+Plugin 'Lokaltog/vim-easymotion'
+Plugin 'wesQ3/vim-windowswap'
+Plugin 'vim-scripts/SearchComplete'
+Plugin 'scrooloose/nerdcommenter'
+
+Plugin 'flazz/vim-colorschemes'
+"Plugin 'gilgigilgil/anderson.vim.git'
+"Plugin 'altercation/solarized'
+"Plugin 'vim-scripts/TaskList.vim'
+
+call vundle#end()            " required
+filetype plugin on           " required
+
+
+" ----------------------------- NORMAL STUFF ------------------------------
+"
+syntax on
+colorscheme slate
+"set background=dark
+set number			                " show line numbers
+"set relativenumber                 " sets relative line numbers
+"let loaded_matchparen = 1	        " disables parenthesis highlighting
+
+set tabstop=4			            " set tab width to 4
+set shiftwidth=4
+set expandtab			            " use spaces for tabs
+set softtabstop=4                   " for deleting 4 spaces at a time?
+
+set cindent			                " tries to auto indent C style code
+set autoindent                      " keeps things indented?
+set nosmartindent                   " supposed to stop python # comments from being pushed to left
+set linebreak                       " stops lines from wrapping in the middle of words
+set colorcolumn=80                  " highlight at 100 characters
+filetype indent on
+
+set hidden                          " something to do with multiple buffers
+set history=500                     " remember more previous commands
+
+set wildmenu                        " fix autocomplete for opening files with :e
+set wildmode=list:longest
+
+set scrolloff=3                     " keep 3 lines visible around current line when scrolling
+
+set hlsearch                        " start highlighting matches as they are typed
+set incsearch
+set smartcase                       " case insensitive search unless capitals are specified
+set ignorecase
+
+set backupdir=~/.vim/backup//       " this should put all swap files and backups in one folder
+set directory=~/.vim/swp//
+
+set modelines=0                     " something to do with a security flaw
+set nocompatible
+set encoding=utf-8
+
+set noerrorbells                    " disable error noises/flashes
+set novisualbell
+set vb t_vb=
+
+" reload vimrc automatically when it is saved
+augroup reload_vimrc " {
+    autocmd!
+    autocmd BufWritePost $MYVIMRC source $MYVIMRC
+augroup END " }
+
+set tags=./tags;/                   " search up through directories for tags file
+
+cd ./                               " set working directory
+
+
+" ----------------------------- PLUGIN SHORTCUTS --------------------------
+"
+map <leader>n :NERDTreeTabsToggle<CR>
+
+" search in growthintel by default
+nnoremap <leader>p :CtrlP /Users/douglas/growthintel/<CR>
+
+map <leader>t :TagbarToggle<CR>
+
+":let g:airline_theme='molokai'     " set airline theme for clearer bars (if using wombat)
+
+
+" --------------------- SYNTASTIC SETTINGS ---------------------
+"
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
+
+" ---------------------------- SHORTCUT MAPPINGS ----------------------------
+" can't have inline commments here, whitespace after the mapping is added to it!
+"
+" get rid of highlighting
+nnoremap <leader><space> :noh<CR>
+
+" easier escape back to normal mode
+inoremap jj <esc>
+
+" saving
+nnoremap <leader>s :w<CR>
+cnoreabbrev W w
+
+" quitting
+nnoremap <leader>q :q<CR>
+
+" stop the weird command history window from popping up when trying to quit
+map q: :q
+
+" get rid of annoying f1 help popup
+:nmap <F1> <nop>
+:imap <F1> <nop>
+
+" strip all trailing whitespace
+nnoremap <leader>a :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>:w<CR>
+
+" add a pdb breakpoint
+function! InsertPdb()
+    let trace = expand("import ipdb; ipdb.set_trace()")
+    execute "normal o".trace
+endfunction
+
+nnoremap <leader>p :call InsertPdb()<CR>
+
+" colour schemes
+nnoremap <F2> :colorscheme wombat256mod<CR>
+nnoremap <F3> :colorscheme kalisi<CR>
+nnoremap <F4> :colorscheme solarized<CR>
+nnoremap <F10> :let &background = ( &background == "dark"? "light" : "dark" )<CR>
+
+" open ctag in new vertical split
+"nnoremap <C-[> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
