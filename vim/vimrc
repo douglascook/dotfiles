@@ -32,7 +32,7 @@ filetype plugin on           " required
 " ----------------------------- NORMAL STUFF ------------------------------
 "
 syntax on
-colorscheme slate
+colorscheme wombat256mod
 "set background=dark
 set number			                " show line numbers
 "set relativenumber                 " sets relative line numbers

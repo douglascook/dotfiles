@@ -1,5 +1,6 @@
 export HISTSIZE=50000
 export HISTCONTROL=ignoredups
+
 export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 # below required to set path for work laptop
 export PYTHONPATH=/Users/douglas/growthintel/:$PYTHONPATH
