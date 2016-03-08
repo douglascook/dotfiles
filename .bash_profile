@@ -34,4 +34,4 @@ export DOCKER_MACHINE_NAME="dev"
 
 export PYLINTRC=/Users/douglas/growthintel/gi_style_guides/style/pylintrc
 
-export SPARK_HOME=/usr/local/Cellar/apache-spark131/1.3.1/libexec
+export SPARK_HOME=/usr/local/Cellar/apache-spark/1.6.0/libexec
