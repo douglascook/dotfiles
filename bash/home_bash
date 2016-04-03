@@ -4,8 +4,8 @@ export HISTCONTROL=ignoredups
 export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 
 # virtualenv wrapper
-export WORKON_HOME=$HOME/.virtualenvs
-export PROJECT_HOME=$HOME/growthintel
+export WORKON_HOME=$HOME/code/.virtualenvs
+export PROJECT_HOME=$HOME/code/projects
 source /usr/local/bin/virtualenvwrapper.sh
 
 # homebrew github token
