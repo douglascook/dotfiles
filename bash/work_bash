@@ -28,4 +28,4 @@ alias killpyc="find . -name '*.pyc' -delete"
 
 export PYLINTRC=/Users/douglas/growthintel/gi_style_guides/style/pylintrc
 
-export SPARK_HOME=/usr/local/Cellar/apache-spark/1.6.0/libexec
+export SPARK_HOME=/usr/local/Cellar/apache-spark/1.6.1/libexec
