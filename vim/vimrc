@@ -41,10 +41,11 @@ set number			                " show line numbers
 "set relativenumber                 " sets relative line numbers
 "let loaded_matchparen = 1	        " disables parenthesis highlighting
 
-set tabstop=4			            " set tab width to 4
-set shiftwidth=4
+"TODO currently set these to 2 for .jsx files and overwrite in python ftplugin file - fix it!
+set tabstop=2
+set shiftwidth=2
 set expandtab			            " use spaces for tabs
-set softtabstop=4                   " for deleting 4 spaces at a time?
+set softtabstop=2             " for deleting multiple spaces at a time if they were a tab?
 
 set cindent			                " tries to auto indent C style code
 set autoindent                      " keeps things indented?
