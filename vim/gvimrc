@@ -1,3 +1,9 @@
 "set background=light
 "set guifont=Andale\ Mono:h12
 colorscheme kalisi
+
+"remove left and right scroll bars
+set guioptions-=r
+set guioptions-=l
+set guioptions-=R
+set guioptions-=L
