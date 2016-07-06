@@ -93,11 +93,6 @@ cd ./                               " set working directory
 map <leader>n :NERDTreeTabsToggle<CR>
 map <leader>m :NERDTreeFind<CR>
 
-" search in growthintel by default
-nnoremap <leader>p :CtrlP /Users/douglas/growthintel/<CR>
-
-map <leader>t :TagbarToggle<CR>
-
 ":let g:airline_theme='molokai'     " set airline theme for clearer bars (if using wombat)
 
 
@@ -114,6 +109,11 @@ let g:syntastic_check_on_wq = 0
 
 let g:ycm_filetype_blacklist = {'sql': 1, 'csv': 1, 'txt': 1}
 
+
+" -------------------------- CTRLP ------------------------
+
+" use the nearest .git directory as working directory
+let g:ctrlp_working_path_mode = 'r'
 
 " ---------------------------- SHORTCUT MAPPINGS ----------------------------
 " can't have inline commments here, whitespace after the mapping is added to it!
