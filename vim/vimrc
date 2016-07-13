@@ -36,10 +36,7 @@ filetype plugin on           " required
 "
 syntax on
 colorscheme wombat256mod
-"set background=dark
 set number			                " show line numbers
-"set relativenumber                 " sets relative line numbers
-"let loaded_matchparen = 1	        " disables parenthesis highlighting
 
 "TODO currently set these to 2 for .jsx files and overwrite in python ftplugin file - fix it!
 set tabstop=2
@@ -88,33 +85,6 @@ set tags=./tags;/                   " search up through directories for tags fil
 cd ./                               " set working directory
 
 
-" ----------------------------- PLUGIN SHORTCUTS --------------------------
-"
-map <leader>n :NERDTreeTabsToggle<CR>
-map <leader>m :NERDTreeFind<CR>
-
-":let g:airline_theme='molokai'     " set airline theme for clearer bars (if using wombat)
-
-
-" --------------------------- SYNTASTIC ---------------------------
-"
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-
-" -------------------------- YOUCOMPLETEME ------------------------
-
-let g:ycm_filetype_blacklist = {'sql': 1, 'csv': 1, 'txt': 1}
-
-
-" -------------------------- CTRLP ------------------------
-
-" use the nearest .git directory as working directory
-let g:ctrlp_working_path_mode = 'r'
-
 " ---------------------------- SHORTCUT MAPPINGS ----------------------------
 " can't have inline commments here, whitespace after the mapping is added to it!
 "
@@ -157,3 +127,42 @@ nnoremap <F10> :let &background = ( &background == "dark"? "light" : "dark" )<CR
 
 " open ctag in new vertical split
 "nnoremap <C-[> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
+
+
+
+" ----------------------------- PLUGINS -----------------------------
+
+"  NERDTREE 
+"
+map <leader>n :NERDTreeTabsToggle<CR>
+map <leader>m :NERDTreeFind<CR>
+
+
+"  AIRLINE 
+"
+"let g:airline_powerline_fonts = 1 
+":let g:airline_theme='molokai'     " set airline theme for clearer bars (if using wombat)
+
+
+"  SYNTASTIC 
+"
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
+
+"  YOUCOMPLETEME 
+"
+let g:ycm_filetype_blacklist = {'sql': 1, 'csv': 1, 'txt': 1}
+
+
+"  CTRLP 
+"
+" use the nearest .git directory as working directory
+let g:ctrlp_working_path_mode = 'r'
+
+nmap <C-l> :CtrlPBuffer<CR>
+nmap <C-k> :CtrlPTag<CR>
