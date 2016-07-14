@@ -163,6 +163,7 @@ let g:ycm_filetype_blacklist = {'sql': 1, 'csv': 1, 'txt': 1}
 "
 " use the nearest .git directory as working directory
 let g:ctrlp_working_path_mode = 'r'
+let g:ctrlp_custom_ignore = '*.pyc'
 
 nmap <C-l> :CtrlPBuffer<CR>
 nmap <C-k> :CtrlPTag<CR>
