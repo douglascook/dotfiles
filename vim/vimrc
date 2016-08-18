@@ -128,6 +128,9 @@ nnoremap <F10> :let &background = ( &background == "dark"? "light" : "dark" )<CR
 " open ctag in new vertical split
 "nnoremap <C-[> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
 
+"TODO why doesn't the yank to clipboard work?
+"nnoremap <leader>y "*y
+"nnoremap <leader>u "*p
 
 
 " ----------------------------- PLUGINS -----------------------------
@@ -165,5 +168,5 @@ let g:ycm_filetype_blacklist = {'sql': 1, 'csv': 1, 'txt': 1}
 let g:ctrlp_working_path_mode = 'r'
 let g:ctrlp_custom_ignore = '*.pyc'
 
-nmap <C-l> :CtrlPBuffer<CR>
+nmap <C-j> :CtrlPBuffer<CR>
 nmap <C-k> :CtrlPTag<CR>

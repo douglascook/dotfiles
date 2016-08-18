@@ -1,0 +1,10 @@
+import os
+
+# kill ipdb
+alias kk os.system('kill -9 %d' % os.getpid())
+
+# Print the member variables of self.
+alias ps pi self
+
+# Print the locals.
+alias pl p_ locals() local:

@@ -4,6 +4,7 @@ export HISTCONTROL=ignoredups
 export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 # below required to set path for work laptop
 export PYTHONPATH=/Users/douglas/growthintel/:$PYTHONPATH
+export PYTHONDONTWRITEBYTECODE=1
 
 # virtualenv wrapper
 export WORKON_HOME=$HOME/.virtualenvs
