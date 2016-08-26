@@ -21,6 +21,9 @@ Plugin 'vim-scripts/SearchComplete'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'tpope/vim-fugitive'
 
+Plugin 'pangloss/vim-javascript'
+Plugin 'mxw/vim-jsx'
+
 Plugin 'flazz/vim-colorschemes'
 "Plugin 'gilgigilgil/anderson.vim.git'
 "Plugin 'altercation/solarized'
@@ -38,7 +41,6 @@ syntax on
 colorscheme wombat256mod
 set number			                " show line numbers
 
-"TODO currently set these to 2 for .jsx files and overwrite in python ftplugin file - fix it!
 set tabstop=2
 set shiftwidth=2
 set expandtab			            " use spaces for tabs
@@ -155,6 +157,7 @@ set statusline+=%*
 
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+let g:syntastic_javascript_checkers = ['eslint']
 
 
 "  YOUCOMPLETEME 
