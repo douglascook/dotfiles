@@ -24,3 +24,8 @@ alias ll='ls -alh'
 
 # remove all pyc files in current dir
 alias killpyc="find . -name '*.pyc' -delete"
+
+# android development stuff
+export ANDROID_HOME=~/Library/Android/sdk
+export PATH=${PATH}:${ANDROID_HOME}/tools
+export PATH=${PATH}:${ANDROID_HOME}/platform-tools
