@@ -17,9 +17,11 @@ function tunnel {
    ssh -f $1 -L $2:localhost:$3 -N
 }
 
-# colouring ls
+# colouring ls - only need first unless specifying manually
 export CLICOLOR=1
-export LSCOLORS=ExFxBxDxCxegedabagacad
+#export LSCOLORS=ExFxBxDxCxegedabagacad
+#export LSCOLORS=gxBxhxDxfxhxhxhxhxcxcx
+
 alias ll='ls -alh'
 
 # remove all pyc files in current dir
