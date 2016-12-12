@@ -17,9 +17,10 @@ Plugin 'bling/vim-airline'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'Lokaltog/vim-easymotion'
 Plugin 'wesQ3/vim-windowswap'
-Plugin 'vim-scripts/SearchComplete'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'tpope/vim-fugitive'
+
+Plugin 'hdima/python-syntax'
 
 Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
@@ -46,12 +47,14 @@ set shiftwidth=2
 set expandtab			            " use spaces for tabs
 set softtabstop=2             " for deleting multiple spaces at a time if they were a tab?
 
-set cindent			                " tries to auto indent C style code
+set cindent			                    " tries to auto indent C style code
 set autoindent                      " keeps things indented?
 set nosmartindent                   " supposed to stop python # comments from being pushed to left
 set linebreak                       " stops lines from wrapping in the middle of words
+set breakindent                     " use same level indentation on wrapped lines
 set colorcolumn=80                  " highlight at 100 characters
 filetype indent on
+set guifont=Menlo:h12
 
 set hidden                          " something to do with multiple buffers
 set history=500                     " remember more previous commands
@@ -158,6 +161,7 @@ set statusline+=%*
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_javascript_checkers = ['eslint']
+let g:syntastic_go_checkers = ['go', 'gofmt', 'govet']
 
 
 "  YOUCOMPLETEME 
@@ -173,3 +177,7 @@ let g:ctrlp_custom_ignore = '*.pyc'
 
 nmap <C-j> :CtrlPBuffer<CR>
 nmap <C-k> :CtrlPTag<CR>
+
+
+set foldmethod=indent
+set foldnestmax=2      " when there are no classes involved this will just fold the methods
