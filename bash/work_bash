@@ -1,4 +1,4 @@
-export HISTSIZE=50000
+export HISTSIZE=5000000
 export HISTCONTROL=ignoredups
 
 export PATH=/usr/local/bin:/usr/local/sbin:$PATH
@@ -21,7 +21,6 @@ function tunnel {
 
 # colouring ls
 export CLICOLOR=1
-export LSCOLORS=ExFxBxDxCxegedabagacad
 alias ll='ls -alh'
 
 # remove all pyc files in current dir
@@ -29,4 +28,13 @@ alias killpyc="find . -name '*.pyc' -delete"
 
 export PYLINTRC=/Users/douglas/growthintel/gi_style_guides/style/pylintrc
 
-export SPARK_HOME=/usr/local/Cellar/apache-spark/1.6.2/libexec
+export SPARK_HOME=/usr/local/share/spark
+export MARIO_SETTINGS="LocalSettings"
+
+export GOPATH=$HOME/growthintel/go_space
+
+test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
+
+export ANDROID_HOME=~/Library/Android/sdk
+export PATH=${PATH}:${ANDROID_HOME}/tools
+export PATH=${PATH}:${ANDROID_HOME}/platform-tools

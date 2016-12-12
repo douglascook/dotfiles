@@ -1,4 +1,4 @@
-export HISTSIZE=50000
+export HISTSIZE=5000000
 export HISTCONTROL=ignoredups
 
 export PATH=/usr/local/bin:/usr/local/sbin:$PATH
