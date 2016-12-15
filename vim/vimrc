@@ -89,6 +89,9 @@ set tags=./tags;/                   " search up through directories for tags fil
 
 cd ./                               " set working directory
 
+set foldmethod=indent
+set foldnestmax=2      " when there are no classes involved this will just fold the methods
+
 
 " ---------------------------- SHORTCUT MAPPINGS ----------------------------
 " can't have inline commments here, whitespace after the mapping is added to it!
@@ -145,12 +148,10 @@ nnoremap <F10> :let &background = ( &background == "dark"? "light" : "dark" )<CR
 map <leader>n :NERDTreeTabsToggle<CR>
 map <leader>m :NERDTreeFind<CR>
 
-
 "  AIRLINE 
 "
 "let g:airline_powerline_fonts = 1 
 ":let g:airline_theme='molokai'     " set airline theme for clearer bars (if using wombat)
-
 
 "  SYNTASTIC 
 "
@@ -163,11 +164,9 @@ let g:syntastic_check_on_wq = 0
 let g:syntastic_javascript_checkers = ['eslint']
 let g:syntastic_go_checkers = ['go', 'gofmt', 'govet']
 
-
 "  YOUCOMPLETEME 
 "
 let g:ycm_filetype_blacklist = {'sql': 1, 'csv': 1, 'txt': 1}
-
 
 "  CTRLP 
 "
@@ -178,6 +177,6 @@ let g:ctrlp_custom_ignore = '*.pyc'
 nmap <C-j> :CtrlPBuffer<CR>
 nmap <C-k> :CtrlPTag<CR>
 
-
-set foldmethod=indent
-set foldnestmax=2      " when there are no classes involved this will just fold the methods
+" PYTHON SYNTAX PLUGIN
+"
+let python_highlight_all=1
