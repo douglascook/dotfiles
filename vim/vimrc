@@ -132,6 +132,7 @@ nnoremap <leader>p :call InsertPdb()<CR>
 nnoremap <F2> :colorscheme wombat256mod<CR>
 nnoremap <F3> :colorscheme kalisi<CR>
 nnoremap <F4> :colorscheme solarized<CR>
+nnoremap <F5> :colorscheme base16-ateliersulphurpool<CR>
 nnoremap <F10> :let &background = ( &background == "dark"? "light" : "dark" )<CR>
 
 " open ctag in new vertical split
