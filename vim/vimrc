@@ -145,17 +145,17 @@ nnoremap <F10> :let &background = ( &background == "dark"? "light" : "dark" )<CR
 
 " ----------------------------- PLUGINS -----------------------------
 
-"  NERDTREE 
+"  NERDTREE
 "
 map <leader>n :NERDTreeTabsToggle<CR>
 map <leader>m :NERDTreeFind<CR>
 
-"  AIRLINE 
+"  AIRLINE
 "
-"let g:airline_powerline_fonts = 1 
+"let g:airline_powerline_fonts = 1
 ":let g:airline_theme='molokai'     " set airline theme for clearer bars (if using wombat)
 
-"  SYNTASTIC 
+"  SYNTASTIC
 "
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
@@ -166,15 +166,16 @@ let g:syntastic_check_on_wq = 0
 let g:syntastic_javascript_checkers = ['eslint']
 let g:syntastic_go_checkers = ['go', 'gofmt', 'govet']
 
-"  YOUCOMPLETEME 
+"  YOUCOMPLETEME
 "
 let g:ycm_filetype_blacklist = {'sql': 1, 'csv': 1, 'txt': 1}
 
-"  CTRLP 
+"  CTRLP
 "
 " use the nearest .git directory as working directory
 let g:ctrlp_working_path_mode = 'r'
 let g:ctrlp_custom_ignore = '*.pyc'
+let g:ctrlp_max_files=0
 
 nmap <C-j> :CtrlPBuffer<CR>
 nmap <C-k> :CtrlPTag<CR>
