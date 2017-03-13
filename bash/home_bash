@@ -11,6 +11,7 @@ source /usr/local/bin/virtualenvwrapper.sh
 
 # homebrew github token
 export HOMEBREW_GITHUB_API_TOKEN=7df0e45e8a8e804ff0f7a6f8c5fcf9cd0c110eaa
+export GIT_EDITOR=vim
 
 # dylan's tunnel helper function
 function tunnel {

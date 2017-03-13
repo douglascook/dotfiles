@@ -3,16 +3,18 @@ export HISTCONTROL=ignoredups
 
 export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 # below required to set path for work laptop
-export PYTHONPATH=/Users/douglas/growthintel/:$PYTHONPATH
+export PYTHONPATH=/Users/douglas/eigen/:$PYTHONPATH
 export PYTHONDONTWRITEBYTECODE=1
 
 # virtualenv wrapper
 export WORKON_HOME=$HOME/.virtualenvs
-export PROJECT_HOME=$HOME/growthintel
+export PROJECT_HOME=$HOME/eigen
 source /usr/local/bin/virtualenvwrapper.sh
 
 # homebrew github token
 export HOMEBREW_GITHUB_API_TOKEN=7df0e45e8a8e804ff0f7a6f8c5fcf9cd0c110eaa
+# git defaults to vi which will use built in vim instead of brew one
+export GIT_EDITOR=vim
 
 # dylan's tunnel helper function
 function tunnel {
@@ -26,15 +28,9 @@ alias ll='ls -alh'
 # remove all pyc files in current dir
 alias killpyc="find . -name '*.pyc' -delete"
 
-export PYLINTRC=/Users/douglas/growthintel/gi_style_guides/style/pylintrc
-
-export SPARK_HOME=/usr/local/share/spark
-export MARIO_SETTINGS="LocalSettings"
-
-export GOPATH=$HOME/growthintel/go_space
+export PYLINTRC=/Users/douglas/.pylintrc
 
 test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
 
-export ANDROID_HOME=~/Library/Android/sdk
-export PATH=${PATH}:${ANDROID_HOME}/tools
-export PATH=${PATH}:${ANDROID_HOME}/platform-tools
+# fix brew installed ctags
+alias ctags="`brew --prefix`/bin/ctags"
