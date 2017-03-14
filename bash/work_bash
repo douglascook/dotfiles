@@ -6,11 +6,6 @@ export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 export PYTHONPATH=/Users/douglas/eigen/:$PYTHONPATH
 export PYTHONDONTWRITEBYTECODE=1
 
-# virtualenv wrapper
-export WORKON_HOME=$HOME/.virtualenvs
-export PROJECT_HOME=$HOME/eigen
-source /usr/local/bin/virtualenvwrapper.sh
-
 # homebrew github token
 export HOMEBREW_GITHUB_API_TOKEN=7df0e45e8a8e804ff0f7a6f8c5fcf9cd0c110eaa
 # git defaults to vi which will use built in vim instead of brew one
@@ -34,3 +29,6 @@ test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shel
 
 # fix brew installed ctags
 alias ctags="`brew --prefix`/bin/ctags"
+
+# get pyenv to work
+eval "$(pyenv init -)"

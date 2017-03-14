@@ -169,6 +169,8 @@ let g:syntastic_go_checkers = ['go', 'gofmt', 'govet']
 "  YOUCOMPLETEME
 "
 let g:ycm_filetype_blacklist = {'sql': 1, 'csv': 1, 'txt': 1}
+let g:ycm_python_binary_path = 'python'
+"let g:ycm_collect_identifiers_from_tags_files = 1
 
 "  CTRLP
 "
@@ -181,7 +183,6 @@ nmap <C-j> :CtrlPBuffer<CR>
 nmap <C-k> :CtrlPTag<CR>
 
 " PYTHON SYNTAX PLUGIN
-"
 let python_highlight_all=1
 
 " JSX SYNTAX
