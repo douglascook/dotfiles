@@ -25,6 +25,8 @@ Plugin 'hdima/python-syntax'
 Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
 
+Plugin 'kovisoft/slimv'
+
 Plugin 'flazz/vim-colorschemes'
 "Plugin 'gilgigilgil/anderson.vim.git'
 "Plugin 'altercation/solarized'
@@ -188,3 +190,7 @@ let python_highlight_all=1
 " JSX SYNTAX
 " use on all filetypes
 let g:jsx_ext_required = 0
+
+" SLIME MODE FOR VIM
+let g:slimv_repl_split = 4 " open repl in vertical split on the right
+let g:paredit_mode=0 " don't dicate parentheses!

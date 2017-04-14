@@ -2,6 +2,7 @@ export HISTSIZE=5000000
 export HISTCONTROL=ignoredups
 
 export PATH=/usr/local/bin:/usr/local/sbin:$PATH
+export PYTHONPATH=/Users/Dug/code/projects:$PYTHONPATH
 export PYTHONDONTWRITEBYTECODE=1
 
 # virtualenv wrapper
