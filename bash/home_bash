@@ -33,3 +33,6 @@ alias killpyc="find . -name '*.pyc' -delete"
 export ANDROID_HOME=~/Library/Android/sdk
 export PATH=${PATH}:${ANDROID_HOME}/tools
 export PATH=${PATH}:${ANDROID_HOME}/platform-tools
+
+# fix brew installed ctags
+alias ctags="`brew --prefix`/bin/ctags"
