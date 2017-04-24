@@ -32,3 +32,6 @@ alias ctags="`brew --prefix`/bin/ctags"
 
 # get pyenv to work
 eval "$(pyenv init -)"
+
+# initialise pyenv-virtualenvwrapper
+pyenv virtualenvwrapper
