@@ -10,8 +10,6 @@ export WORKON_HOME=$HOME/code/.virtualenvs
 export PROJECT_HOME=$HOME/code/projects
 source /usr/local/bin/virtualenvwrapper.sh
 
-# homebrew github token
-export HOMEBREW_GITHUB_API_TOKEN=7df0e45e8a8e804ff0f7a6f8c5fcf9cd0c110eaa
 export GIT_EDITOR=vim
 
 # dylan's tunnel helper function
@@ -36,3 +34,6 @@ export PATH=${PATH}:${ANDROID_HOME}/platform-tools
 
 # fix brew installed ctags
 alias ctags="`brew --prefix`/bin/ctags"
+
+# activate iterm2 shell integration
+test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"

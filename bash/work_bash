@@ -6,8 +6,6 @@ export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 export PYTHONPATH=/Users/douglas/eigen/:$PYTHONPATH
 export PYTHONDONTWRITEBYTECODE=1
 
-# homebrew github token
-export HOMEBREW_GITHUB_API_TOKEN=7df0e45e8a8e804ff0f7a6f8c5fcf9cd0c110eaa
 # git defaults to vi which will use built in vim instead of brew one
 export GIT_EDITOR=vim
 
@@ -25,6 +23,7 @@ alias killpyc="find . -name '*.pyc' -delete"
 
 export PYLINTRC=/Users/douglas/.pylintrc
 
+# activate iterm shell integration
 test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
 
 # fix brew installed ctags
