@@ -15,10 +15,11 @@ Plugin 'Valloric/YouCompleteMe'
 
 Plugin 'vim-airline/vim-airline'
 Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'tpope/vim-fugitive'
 Plugin 'easymotion/vim-easymotion'
 Plugin 'wesQ3/vim-windowswap'
 Plugin 'scrooloose/nerdcommenter'
-Plugin 'tpope/vim-fugitive'
+Plugin 'flazz/vim-colorschemes'
 
 Plugin 'hdima/python-syntax'
 
@@ -27,11 +28,7 @@ Plugin 'mxw/vim-jsx'
 
 Plugin 'kovisoft/slimv'
 
-Plugin 'flazz/vim-colorschemes'
-"Plugin 'gilgigilgil/anderson.vim.git'
-"Plugin 'altercation/solarized'
 "Plugin 'vim-scripts/TaskList.vim'
-
 "Plugin 'derekwyatt/vim-scala'
 "Plugin 'lambdatoast/elm.vim'
 
@@ -43,43 +40,43 @@ filetype plugin on           " required
 "
 syntax on
 colorscheme wombat256mod
-set number			                " show line numbers
+set number			               " show line numbers
 
 set tabstop=2
 set shiftwidth=2
-set expandtab			            " use spaces for tabs
-set softtabstop=2             " for deleting multiple spaces at a time if they were a tab?
+set expandtab			             " use spaces for tabs
+set softtabstop=2              " for deleting multiple spaces at a time if they were a tab?
 
-set cindent			                    " tries to auto indent C style code
-set autoindent                      " keeps things indented?
-set nosmartindent                   " supposed to stop python # comments from being pushed to left
-set linebreak                       " stops lines from wrapping in the middle of words
-set breakindent                     " use same level indentation on wrapped lines
-set colorcolumn=80                  " highlight at 100 characters
+set cindent			               " tries to auto indent C style code
+set autoindent                 " keeps things indented?
+set nosmartindent              " supposed to stop python # comments from being pushed to left
+set linebreak                  " stops lines from wrapping in the middle of words
+set breakindent                " use same level indentation on wrapped lines
+set colorcolumn=80             " highlight at 100 characters
 filetype indent on
 set guifont=Menlo:h12
 
-set hidden                          " something to do with multiple buffers
-set history=500                     " remember more previous commands
+set hidden                     " something to do with multiple buffers
+set history=500                " remember more previous commands
 
-set wildmenu                        " fix autocomplete for opening files with :e
+set wildmenu                   " fix autocomplete for opening files with :e
 set wildmode=list:longest
 
-set scrolloff=3                     " keep 3 lines visible around current line when scrolling
+set scrolloff=3                " keep 3 lines visible around current line when scrolling
 
-set hlsearch                        " start highlighting matches as they are typed
+set hlsearch                   " start highlighting matches as they are typed
 set incsearch
-set smartcase                       " case insensitive search unless capitals are specified
+set smartcase                  " case insensitive search unless capitals are specified
 set ignorecase
 
-set backupdir=~/.vim/backup//       " this should put all swap files and backups in one folder
+set backupdir=~/.vim/backup//  " this should put all swap files and backups in one folder
 set directory=~/.vim/swp//
 
-set modelines=0                     " something to do with a security flaw
+set modelines=0                " something to do with a security flaw
 set nocompatible
 set encoding=utf-8
 
-set noerrorbells                    " disable error noises/flashes
+set noerrorbells               " disable error noises/flashes
 set novisualbell
 set vb t_vb=
 
@@ -88,9 +85,9 @@ augroup reload_vimrc " {
     autocmd! bufwritepost .vimrc source %
 augroup END " }
 
-set tags=./tags;/                   " search up through directories for tags file
+set tags=./tags;/              " search up through directories for tags file
 
-cd ./                               " set working directory
+cd ./                          " set working directory
 
 set foldmethod=indent
 set foldnestmax=2      " when there are no classes involved this will just fold the methods
@@ -157,7 +154,7 @@ map <leader>m :NERDTreeFind<CR>
 set laststatus=2 " always display the status bar, even with single pane
 let g:airline_inactive_collapse=1
 "let g:airline_powerline_fonts = 1
-":let g:airline_theme='molokai'     " set airline theme for clearer bars (if using wombat)
+"let g:airline_theme='molokai'     " set airline theme for clearer bars (if using wombat)
 
 "  SYNTASTIC
 "
