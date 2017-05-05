@@ -176,7 +176,7 @@ let g:ycm_autoclose_preview_window_after_insertion=1
 "
 " use the nearest .git directory as working directory
 let g:ctrlp_working_path_mode = 'r'
-let g:ctrlp_custom_ignore = '*.pyc'
+let g:ctrlp_custom_ignore = '*.pyc|/\.git$'
 let g:ctrlp_max_files=0
 
 nmap <C-j> :CtrlPBuffer<CR>
