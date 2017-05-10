@@ -7,25 +7,24 @@ call vundle#begin('~/.vim/bundle')
 
 Plugin 'VundleVim/Vundle.vim'
 
-Plugin 'scrooloose/nerdtree'
-Plugin 'jistr/vim-nerdtree-tabs'
-
 Plugin 'vim-syntastic/syntastic'
 Plugin 'Valloric/YouCompleteMe'
 
+Plugin 'scrooloose/nerdtree'
+Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'vim-airline/vim-airline'
 Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'tpope/vim-fugitive'
 Plugin 'easymotion/vim-easymotion'
 Plugin 'wesQ3/vim-windowswap'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'flazz/vim-colorschemes'
 
-Plugin 'hdima/python-syntax'
+Plugin 'tpope/vim-fugitive'
+Plugin 'tommcdo/vim-fubitive' " enable fugitive bitbucket browsing
 
+Plugin 'hdima/python-syntax'
 Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
-
 Plugin 'kovisoft/slimv'
 
 "Plugin 'vim-scripts/TaskList.vim'
