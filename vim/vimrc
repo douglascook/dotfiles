@@ -7,7 +7,7 @@ call vundle#begin('~/.vim/bundle')
 
 Plugin 'VundleVim/Vundle.vim'
 
-Plugin 'vim-syntastic/syntastic'
+Plugin 'w0rp/ale'
 Plugin 'Valloric/YouCompleteMe'
 
 Plugin 'scrooloose/nerdtree'
@@ -155,15 +155,15 @@ let g:airline_inactive_collapse=1
 "let g:airline_powerline_fonts = 1
 "let g:airline_theme='molokai'     " set airline theme for clearer bars (if using wombat)
 
-"  SYNTASTIC
+"  ALE
 "
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-let g:syntastic_enable_balloons = 0
-
-let g:syntastic_python_checkeres = ['pylint']
-let g:syntastic_javascript_checkers = ['eslint']
-let g:syntastic_go_checkers = ['go', 'gofmt', 'govet']
+let g:ale_linters = {
+\  'python': ['pylint'],
+\  'javascript': ['eslint'],
+\  'go': ['go', 'gofmt', 'govet'],
+\}
+let g:ale_python_pylint_use_global = 'never' " don't lint while editing
+let g:ale_lint_on_text_changed = 1 " use virtualenv pylint (bad naming...)
 
 "  YOUCOMPLETEME
 "
