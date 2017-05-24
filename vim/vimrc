@@ -1,43 +1,33 @@
-" -------------------------- VUNDLE SETUP ---------------------------------
-filetype off
+" -------------------------- PLUGIN SETUP ---------------------------------
+call plug#begin('~/.vim/bundle')
+Plug 'w0rp/ale'
+Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
 
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin('~/.vim/bundle')
+Plug 'scrooloose/nerdtree'
+Plug 'jistr/vim-nerdtree-tabs'
+Plug 'vim-airline/vim-airline'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'easymotion/vim-easymotion'
+Plug 'wesQ3/vim-windowswap'
+Plug 'scrooloose/nerdcommenter'
+Plug 'flazz/vim-colorschemes'
 
-Plugin 'VundleVim/Vundle.vim'
+Plug 'tpope/vim-fugitive'
+Plug 'tommcdo/vim-fubitive' " enable fugitive bitbucket browsing
 
-Plugin 'w0rp/ale'
-Plugin 'Valloric/YouCompleteMe'
-
-Plugin 'scrooloose/nerdtree'
-Plugin 'jistr/vim-nerdtree-tabs'
-Plugin 'vim-airline/vim-airline'
-Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'easymotion/vim-easymotion'
-Plugin 'wesQ3/vim-windowswap'
-Plugin 'scrooloose/nerdcommenter'
-Plugin 'flazz/vim-colorschemes'
-
-Plugin 'tpope/vim-fugitive'
-Plugin 'tommcdo/vim-fubitive' " enable fugitive bitbucket browsing
-
-Plugin 'hdima/python-syntax'
-Plugin 'pangloss/vim-javascript'
-Plugin 'mxw/vim-jsx'
-Plugin 'kovisoft/slimv'
+Plug 'hdima/python-syntax'
+Plug 'pangloss/vim-javascript'
+Plug 'mxw/vim-jsx'
+Plug 'kovisoft/slimv'
 
 "Plugin 'vim-scripts/TaskList.vim'
 "Plugin 'derekwyatt/vim-scala'
 "Plugin 'lambdatoast/elm.vim'
-
-call vundle#end()            " required
-filetype plugin on           " required
+call plug#end()
 
 
 " ----------------------------- NORMAL STUFF ------------------------------
 "
-syntax on
 colorscheme wombat256mod
 set number			               " show line numbers
 
@@ -52,7 +42,6 @@ set nosmartindent              " supposed to stop python # comments from being p
 set linebreak                  " stops lines from wrapping in the middle of words
 set breakindent                " use same level indentation on wrapped lines
 set colorcolumn=80             " highlight at 100 characters
-filetype indent on
 set guifont=Menlo:h12
 
 set hidden                     " something to do with multiple buffers
@@ -61,7 +50,7 @@ set history=500                " remember more previous commands
 set wildmenu                   " fix autocomplete for opening files with :e
 set wildmode=list:longest
 
-set scrolloff=3                " keep 3 lines visible around current line when scrolling
+set scrolloff=8                " keep 3 lines visible around current line when scrolling
 
 set hlsearch                   " start highlighting matches as they are typed
 set incsearch
