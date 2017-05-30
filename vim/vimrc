@@ -41,7 +41,8 @@ set autoindent                 " keeps things indented?
 set nosmartindent              " supposed to stop python # comments from being pushed to left
 set linebreak                  " stops lines from wrapping in the middle of words
 set breakindent                " use same level indentation on wrapped lines
-set colorcolumn=80             " highlight at 100 characters
+set colorcolumn=80             " highlight at 80 characters
+set cursorline                 " highlight current line
 set guifont=Menlo:h12
 
 set hidden                     " something to do with multiple buffers
@@ -140,7 +141,7 @@ map <leader>m :NERDTreeFind<CR>
 "  AIRLINE
 "
 set laststatus=2 " always display the status bar, even with single pane
-let g:airline_inactive_collapse=1
+let g:airline_inactive_collapse = 1
 "let g:airline_powerline_fonts = 1
 "let g:airline_theme='molokai'     " set airline theme for clearer bars (if using wombat)
 
@@ -158,20 +159,20 @@ let g:ale_lint_on_text_changed = 1 " use virtualenv pylint (bad naming...)
 "
 let g:ycm_filetype_blacklist = {'sql': 1, 'csv': 1, 'txt': 1}
 let g:ycm_python_binary_path = 'python' " use first python on path, means virtualenvs work nicely
-let g:ycm_autoclose_preview_window_after_insertion=1
+let g:ycm_autoclose_preview_window_after_insertion = 1
 
 "  CTRLP
 "
 " use the nearest .git directory as working directory
 let g:ctrlp_working_path_mode = 'r'
 let g:ctrlp_custom_ignore = '*.pyc|/\.git$'
-let g:ctrlp_max_files=0
+let g:ctrlp_max_files = 0
 
 nmap <C-j> :CtrlPBuffer<CR>
 nmap <C-k> :CtrlPTag<CR>
 
 " PYTHON SYNTAX PLUGIN
-let python_highlight_all=1
+let python_highlight_all = 1
 
 " JSX SYNTAX
 " use on all filetypes
@@ -179,4 +180,4 @@ let g:jsx_ext_required = 0
 
 " SLIME MODE FOR VIM
 let g:slimv_repl_split = 4 " open repl in vertical split on the right
-let g:paredit_mode=0 " don't dicate parentheses!
+let g:paredit_mode = 0 " don't dicate parentheses!
