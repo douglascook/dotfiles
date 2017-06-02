@@ -135,6 +135,11 @@ nnoremap <F10> :let &background = ( &background == "dark"? "light" : "dark" )<CR
 
 "  NERDTREE
 "
+let g:NERDTreeChDirMode = 2 " change vim working dir when nerdtree root changes
+let g:NERDTreeCascadeSingleChildDir = 0 " don't collapse single child nodes by default
+
+let g:nerdtree_tabs_open_on_gui_startup = 0
+
 map <leader>n :NERDTreeTabsToggle<CR>
 map <leader>m :NERDTreeFind<CR>
 
@@ -143,7 +148,6 @@ map <leader>m :NERDTreeFind<CR>
 set laststatus=2 " always display the status bar, even with single pane
 let g:airline_inactive_collapse = 1
 "let g:airline_powerline_fonts = 1
-"let g:airline_theme='molokai'     " set airline theme for clearer bars (if using wombat)
 
 "  ALE
 "
@@ -163,8 +167,7 @@ let g:ycm_autoclose_preview_window_after_insertion = 1
 
 "  CTRLP
 "
-" use the nearest .git directory as working directory
-let g:ctrlp_working_path_mode = 'r'
+let g:ctrlp_working_path_mode = 'r' " use the nearest .git directory as working directory
 let g:ctrlp_custom_ignore = '*.pyc|/\.git$'
 let g:ctrlp_max_files = 0
 
@@ -175,8 +178,7 @@ nmap <C-k> :CtrlPTag<CR>
 let python_highlight_all = 1
 
 " JSX SYNTAX
-" use on all filetypes
-let g:jsx_ext_required = 0
+let g:jsx_ext_required = 0 " use on all filetypes
 
 " SLIME MODE FOR VIM
 let g:slimv_repl_split = 4 " open repl in vertical split on the right
