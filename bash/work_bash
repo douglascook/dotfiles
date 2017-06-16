@@ -1,7 +1,7 @@
-export HISTSIZE=5000000
+export HISTSIZE=50000000
 export HISTCONTROL=ignoredups
 
-export PATH=/usr/local/bin:/usr/local/sbin:$PATH
+export PATH=/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/miniconda3/bin
 # below required to set path for work laptop
 export PYTHONPATH=/Users/douglas/eigen/repos/:$PYTHONPATH
 export PYTHONDONTWRITEBYTECODE=1
@@ -18,6 +18,8 @@ function tunnel {
 export CLICOLOR=1
 alias ll='ls -alh'
 
+export GREP_OPTIONS='--color=always'
+
 # remove all pyc files in current dir
 alias killpyc="find . -name '*.pyc' -delete"
 
@@ -29,11 +31,12 @@ test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shel
 # fix brew installed ctags
 alias ctags="`brew --prefix`/bin/ctags"
 
-# get pyenv to work
-eval "$(pyenv init -)"
-
 # set up brew installed bash completion
 [ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion
 
+# get pyenv to work
+eval "$(pyenv init -)"
+
+export PYENV_VIRTUALENVWRAPPER_PREFER_PYVENV="true"
 # initialise pyenv-virtualenvwrapper
 pyenv virtualenvwrapper
