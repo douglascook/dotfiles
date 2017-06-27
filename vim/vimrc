@@ -168,7 +168,10 @@ let g:ycm_autoclose_preview_window_after_insertion = 1
 "  CTRLP
 "
 let g:ctrlp_working_path_mode = 'r' " use the nearest .git directory as working directory
-let g:ctrlp_custom_ignore = '*.pyc|/\.git$'
+let g:ctrlp_custom_ignore = {
+\   'dir': '\v[\/](\.git|node_modules|fonts)$',
+\   'file': '\v\.pyc$',
+\}
 let g:ctrlp_max_files = 0
 
 nmap <C-j> :CtrlPBuffer<CR>

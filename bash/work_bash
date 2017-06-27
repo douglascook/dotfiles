@@ -3,7 +3,7 @@ export HISTCONTROL=ignoredups
 
 export PATH=/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/miniconda3/bin
 # below required to set path for work laptop
-export PYTHONPATH=/Users/douglas/eigen/repos/:$PYTHONPATH
+export PYTHONPATH=/Users/douglas/eigen/repos/eigen:/Users/douglas/eigen/repos/:$PYTHONPATH
 export PYTHONDONTWRITEBYTECODE=1
 
 # git defaults to vi which will use built in vim instead of brew one
