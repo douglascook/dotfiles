@@ -156,8 +156,7 @@ let g:ale_linters = {
 \  'javascript': ['eslint'],
 \  'go': ['go', 'gofmt', 'govet'],
 \}
-let g:ale_python_pylint_use_global = 'never' " don't lint while editing
-let g:ale_lint_on_text_changed = 1 " use virtualenv pylint (bad naming...)
+let g:ale_lint_on_text_changed = 'never' " don't lint while editing
 
 "  YOUCOMPLETEME
 "
