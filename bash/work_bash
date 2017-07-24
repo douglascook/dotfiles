@@ -2,12 +2,8 @@ export HISTSIZE=50000000
 export HISTCONTROL=ignoredups
 
 export PATH=/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/miniconda3/bin
-# below required to set path for work laptop
-export PYTHONPATH=/Users/douglas/eigen/repos/eigen:/Users/douglas/eigen/repos/:$PYTHONPATH
-export PYTHONDONTWRITEBYTECODE=1
 
-# git defaults to vi which will use built in vim instead of brew one
-export GIT_EDITOR=vim
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_131.jdk/Contents/Home
 
 # dylan's tunnel helper function
 function tunnel {
@@ -20,19 +16,30 @@ alias ll='ls -alh'
 
 export GREP_OPTIONS='--color=always'
 
-# remove all pyc files in current dir
-alias killpyc="find . -name '*.pyc' -delete"
-
-export PYLINTRC=/Users/douglas/.pylintrc
-
 # activate iterm shell integration
 test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
+
+
+### HOMEBREW
 
 # fix brew installed ctags
 alias ctags="`brew --prefix`/bin/ctags"
 
 # set up brew installed bash completion
 [ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion
+
+# git defaults to vi which will use built in vim instead of brew one
+export GIT_EDITOR=vim
+
+
+### PYTHON
+
+export PYTHONPATH=/Users/douglas/eigen/repos/eigen:/Users/douglas/eigen/repos/:$PYTHONPATH
+export PYLINTRC=/Users/douglas/.pylintrc
+
+# remove all pyc files in current dir
+alias killpyc="find . -name '*.pyc' -delete"
+export PYTHONDONTWRITEBYTECODE=1
 
 # get pyenv to work
 eval "$(pyenv init -)"

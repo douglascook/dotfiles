@@ -42,6 +42,7 @@ set nosmartindent              " supposed to stop python # comments from being p
 set linebreak                  " stops lines from wrapping in the middle of words
 set breakindent                " use same level indentation on wrapped lines
 set colorcolumn=80             " highlight at 80 characters
+set winwidth=90                " set current pane to width 90 (if less) when moving into it
 set cursorline                 " highlight current line
 set guifont=Menlo:h12
 
