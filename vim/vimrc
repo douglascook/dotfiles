@@ -44,7 +44,8 @@ set breakindent                " use same level indentation on wrapped lines
 set colorcolumn=80             " highlight at 80 characters
 set winwidth=90                " set current pane to width 90 (if less) when moving into it
 set cursorline                 " highlight current line
-set guifont=Menlo:h12
+"set guifont=Menlo:h12
+set guifont=DejaVu\ Sans\ Mono\ for\ Powerline:h12
 
 set hidden                     " something to do with multiple buffers
 set history=500                " remember more previous commands
@@ -148,7 +149,7 @@ map <leader>m :NERDTreeFind<CR>
 "
 set laststatus=2 " always display the status bar, even with single pane
 let g:airline_inactive_collapse = 1
-"let g:airline_powerline_fonts = 1
+let g:airline_powerline_fonts = 1
 
 "  ALE
 "
@@ -158,6 +159,7 @@ let g:ale_linters = {
 \  'go': ['go', 'gofmt', 'govet'],
 \}
 let g:ale_lint_on_text_changed = 'never' " don't lint while editing
+let g:ale_javascript_eslint_use_global = 1
 
 "  YOUCOMPLETEME
 "
