@@ -188,6 +188,9 @@ let python_highlight_all = 1
 " JSX SYNTAX
 let g:jsx_ext_required = 0 " use on all filetypes
 
+" JAVASCRIPT SYNTAX
+let g:javascript_plugin_jsdoc = 1
+
 " SLIME MODE FOR VIM
 let g:slimv_repl_split = 4 " open repl in vertical split on the right
 let g:paredit_mode = 0 " don't dicate parentheses!
