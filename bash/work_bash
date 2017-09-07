@@ -32,6 +32,12 @@ alias ctags="`brew --prefix`/bin/ctags"
 export GIT_EDITOR=vim
 
 
+# android development stuff
+export ANDROID_HOME=$HOME/Library/Android/sdk
+export PATH=$PATH:$ANDROID_HOME/tools
+export PATH=$PATH:$ANDROID_HOME/platform-tools
+
+
 ### PYTHON
 
 export PYTHONPATH=/Users/douglas/eigen/repos/eigen:/Users/douglas/eigen/repos/:$PYTHONPATH
