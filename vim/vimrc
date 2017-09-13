@@ -18,6 +18,7 @@ Plug 'tommcdo/vim-fubitive' " enable fugitive bitbucket browsing
 Plug 'hdima/python-syntax'
 Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
+Plug 'ternjs/tern_for_vim'
 Plug 'kovisoft/slimv'
 
 "Plugin 'vim-scripts/TaskList.vim'
