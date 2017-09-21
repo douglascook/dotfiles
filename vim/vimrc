@@ -18,7 +18,7 @@ Plug 'tommcdo/vim-fubitive' " enable fugitive bitbucket browsing
 Plug 'hdima/python-syntax'
 Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
-Plug 'ternjs/tern_for_vim'
+Plug 'ternjs/tern_for_vim', { 'do': 'yarn'}
 Plug 'kovisoft/slimv'
 
 "Plugin 'vim-scripts/TaskList.vim'
@@ -46,7 +46,8 @@ set colorcolumn=80             " highlight at 80 characters
 set winwidth=90                " set current pane to width 90 (if less) when moving into it
 set cursorline                 " highlight current line
 "set guifont=Menlo:h12
-set guifont=DejaVu\ Sans\ Mono\ for\ Powerline:h12
+"set guifont=DejaVu\ Sans\ Mono\ for\ Powerline:h12
+set guifont=Hack:h12
 
 set hidden                     " something to do with multiple buffers
 set history=500                " remember more previous commands
@@ -126,12 +127,11 @@ nnoremap <F4> :colorscheme solarized<CR>
 nnoremap <F5> :colorscheme base16-ateliersulphurpool<CR>
 nnoremap <F10> :let &background = ( &background == "dark"? "light" : "dark" )<CR>
 
-" open ctag in new vertical split
-"nnoremap <C-[> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
-
-"TODO why doesn't the yank to clipboard work?
-"nnoremap <leader>y "*y
-"nnoremap <leader>u "*p
+" Use silver searcher for grepping if available
+if executable('ag')
+  set grepprg=ag\ --nogroup\ --nocolor\ --column
+  set grepformat=%f:%l:%c%m
+endif
 
 
 " ----------------------------- PLUGINS -----------------------------
