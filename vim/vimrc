@@ -53,7 +53,7 @@ set hidden                     " something to do with multiple buffers
 set history=500                " remember more previous commands
 
 set wildmenu                   " fix autocomplete for opening files with :e
-set wildmode=list:longest
+set wildmode=longest:full,list:full
 
 set scrolloff=8                " keep 3 lines visible around current line when scrolling
 
@@ -160,7 +160,6 @@ let g:ale_linters = {
 \  'go': ['go', 'gofmt', 'govet'],
 \}
 let g:ale_lint_on_text_changed = 'never' " don't lint while editing
-let g:ale_javascript_eslint_use_global = 1
 
 "  YOUCOMPLETEME
 "
