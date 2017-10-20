@@ -11,6 +11,8 @@ Plug 'easymotion/vim-easymotion'
 Plug 'wesQ3/vim-windowswap'
 Plug 'scrooloose/nerdcommenter'
 Plug 'flazz/vim-colorschemes'
+Plug 'tpope/vim-unimpaired'
+Plug 'ap/vim-css-color'
 
 Plug 'tpope/vim-fugitive'
 Plug 'tommcdo/vim-fubitive' " enable fugitive bitbucket browsing
