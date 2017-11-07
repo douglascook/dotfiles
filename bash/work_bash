@@ -45,7 +45,6 @@ export PYLINTRC=/Users/douglas/.pylintrc
 
 # remove all pyc files in current dir
 alias killpyc="find . -name '*.pyc' -delete"
-export PYTHONDONTWRITEBYTECODE=1
 
 # get pyenv to work
 eval "$(pyenv init -)"
