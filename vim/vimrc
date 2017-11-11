@@ -15,6 +15,7 @@ Plug 'tpope/vim-unimpaired'
 Plug 'ap/vim-css-color'
 
 Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-rhubarb'
 Plug 'tommcdo/vim-fubitive' " enable fugitive bitbucket browsing
 
 Plug 'hdima/python-syntax'
