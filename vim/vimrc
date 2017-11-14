@@ -92,9 +92,6 @@ set foldnestmax=2      " when there are no classes involved this will just fold 
 " get rid of highlighting
 nnoremap <leader><space> :noh<CR>
 
-" easier escape back to normal mode
-inoremap jj <esc>
-
 " saving
 nnoremap <leader>s :w<CR>
 cnoreabbrev W w
@@ -140,6 +137,7 @@ endif
 "
 let g:NERDTreeChDirMode = 2 " change vim working dir when nerdtree root changes
 let g:NERDTreeCascadeSingleChildDir = 0 " don't collapse single child nodes by default
+let g:NERDTreeIgnore=['\.vim$', '\~$', '__pycache__$[[dir]]']
 
 let g:nerdtree_tabs_open_on_gui_startup = 0
 
