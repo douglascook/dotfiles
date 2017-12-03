@@ -6,7 +6,16 @@ export UPDATE_ZSH_DAYS=8
 ZSH_THEME="muse"
 HIST_STAMPS="yyyy-mm-dd"
 
-plugins=(git)
+JIRA_RAPID_BOARD="true"
+
+plugins=(
+  gitfast
+  django
+  jira
+  osx
+  pip
+  yarn
+)
 
 source $ZSH/oh-my-zsh.sh
 
