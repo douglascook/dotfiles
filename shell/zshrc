@@ -1,0 +1,59 @@
+### ZSH CONFIG
+
+export ZSH=/Users/douglas/.oh-my-zsh
+export UPDATE_ZSH_DAYS=8
+
+ZSH_THEME="muse"
+HIST_STAMPS="yyyy-mm-dd"
+
+plugins=(git)
+
+source $ZSH/oh-my-zsh.sh
+
+
+### GENERAL
+
+export HISTSIZE=50000000
+export HISTCONTROL=ignoredups
+
+export PATH=/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/miniconda3/bin
+
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_131.jdk/Contents/Home
+
+# enable iterm integration
+source ~/.iterm2_shell_integration.zsh
+
+# dylan's tunnel helper function
+function tunnel {
+   ssh -f $1 -L $2:localhost:$3 -N
+}
+
+
+### HOMEBREW
+
+# fix brew installed ctags
+alias ctags="`brew --prefix`/bin/ctags"
+
+# git defaults to vi which will use built in vim instead of brew one
+export GIT_EDITOR=vim
+
+# android development stuff
+export ANDROID_HOME=$HOME/Library/Android/sdk
+export PATH=$PATH:$ANDROID_HOME/tools
+export PATH=$PATH:$ANDROID_HOME/platform-tools
+
+
+### PYTHON
+
+export PYTHONPATH=/Users/douglas/eigen/repos/eigen:/Users/douglas/eigen/repos/:$PYTHONPATH
+export PYLINTRC=/Users/douglas/.pylintrc
+
+# remove all pyc files in current dir
+alias killpyc="find . -name '*.pyc' -delete"
+
+# get pyenv to work
+eval "$(pyenv init -)"
+
+export PYENV_VIRTUALENVWRAPPER_PREFER_PYVENV="true"
+# initialise pyenv-virtualenvwrapper
+pyenv virtualenvwrapper

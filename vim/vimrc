@@ -137,7 +137,7 @@ endif
 "
 let g:NERDTreeChDirMode = 2 " change vim working dir when nerdtree root changes
 let g:NERDTreeCascadeSingleChildDir = 0 " don't collapse single child nodes by default
-let g:NERDTreeIgnore=['\.vim$', '\~$', '__pycache__$[[dir]]']
+let g:NERDTreeIgnore = ['\.vim$', '\~$', '__pycache__$[[dir]]']
 
 let g:nerdtree_tabs_open_on_gui_startup = 0
 
@@ -149,7 +149,7 @@ map <leader>m :NERDTreeFind<CR>
 set laststatus=2 " always display the status bar, even with single pane
 let g:airline_powerline_fonts = 1
 let g:airline_section_b = '' " don't show branch info
-let g:airline_section_c = '%t' " only show name of the file, not whole path
+"let g:airline_section_c = '%t' " only show name of the file, not whole path
 let g:airline_inactive_collapse = 1
 
 "  ALE
