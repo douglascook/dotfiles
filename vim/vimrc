@@ -23,6 +23,7 @@ Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
 Plug 'ternjs/tern_for_vim', { 'do': 'yarn'}
 Plug 'kovisoft/slimv'
+Plug 'ElmCast/elm-vim'
 
 call plug#end()
 
@@ -84,6 +85,9 @@ cd ./                          " set working directory
 
 set foldmethod=indent
 set foldnestmax=2      " when there are no classes involved this will just fold the methods
+
+" diff in vertical splits by default, don't fold until 4 cols nested
+set diffopt=filler,vertical,foldcolumn:4
 
 
 " ---------------------------- SHORTCUT MAPPINGS ----------------------------
