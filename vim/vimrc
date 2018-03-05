@@ -160,11 +160,12 @@ let g:airline_inactive_collapse = 1
 "
 let g:ale_linters = {
 \  'python': ['pylint'],
-\  'javascript': ['eslint'],
+\  'javascript': ['eslint', 'flow'],
 \  'go': ['go', 'gofmt', 'govet'],
 \}
 let g:ale_python_pylint_options = '--load-plugins pylint_django'
 let g:ale_lint_on_text_changed = 'never' " don't lint while editing
+let g:ale_echo_msg_format = '%linter% says %s'
 
 "  YOUCOMPLETEME
 "
@@ -195,6 +196,7 @@ let g:jsx_ext_required = 0 " use on all filetypes
 
 " JAVASCRIPT SYNTAX
 let g:javascript_plugin_jsdoc = 1
+let g:javascript_plugin_flow = 1
 
 " SLIME MODE FOR VIM
 let g:slimv_repl_split = 4 " open repl in vertical split on the right
