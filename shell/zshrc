@@ -25,7 +25,9 @@ source $ZSH/oh-my-zsh.sh
 export HISTSIZE=50000000
 export HISTCONTROL=ignoredups
 
-export PATH=/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/miniconda3/bin
+export PATH=/usr/local/opt/imagemagick@6/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/miniconda3/bin
+# imagemagick is built in so need to give brew version priority
+export PATH=/usr/local/opt/imagemagick@6/bin:$PATH
 
 export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_131.jdk/Contents/Home
 

@@ -24,6 +24,7 @@ Plug 'mxw/vim-jsx'
 Plug 'ternjs/tern_for_vim', { 'do': 'yarn'}
 Plug 'kovisoft/slimv'
 Plug 'ElmCast/elm-vim'
+Plug 'elixir-editors/vim-elixir'
 
 call plug#end()
 
@@ -50,7 +51,7 @@ set cursorline                 " highlight current line
 "set guifont=DejaVu\ Sans\ Mono\ for\ Powerline:h12
 set guifont=Hack:h12
 
-set hidden                     " something to do with multiple buffers
+set hidden                     " allow modified buffers to be hidden without saving changes
 set history=500                " remember more previous commands
 
 set wildmenu                   " fix autocomplete for opening files with :e
@@ -126,6 +127,7 @@ nnoremap <F2> :colorscheme wombat256mod<CR>
 nnoremap <F3> :colorscheme kalisi<CR>
 nnoremap <F4> :colorscheme solarized<CR>
 nnoremap <F5> :colorscheme base16-ateliersulphurpool<CR>
+nnoremap <F6> :colorscheme seoul256<CR>
 nnoremap <F10> :let &background = ( &background == "dark"? "light" : "dark" )<CR>
 
 " Use silver searcher for grepping if available
@@ -165,7 +167,7 @@ let g:ale_linters = {
 \}
 let g:ale_python_pylint_options = '--load-plugins pylint_django'
 let g:ale_lint_on_text_changed = 'never' " don't lint while editing
-let g:ale_echo_msg_format = '%linter% says %s'
+let g:ale_echo_msg_format = '%linter% says: %s'
 
 "  YOUCOMPLETEME
 "
