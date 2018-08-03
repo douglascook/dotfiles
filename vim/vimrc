@@ -6,6 +6,7 @@ Plug 'Valloric/YouCompleteMe', { 'do': './install.py --tern-completer' }
 Plug 'scrooloose/nerdtree'
 Plug 'jistr/vim-nerdtree-tabs'
 Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'easymotion/vim-easymotion'
 Plug 'wesQ3/vim-windowswap'
@@ -49,7 +50,7 @@ set winwidth=90                " set current pane to width 90 (if less) when mov
 set cursorline                 " highlight current line
 "set guifont=Menlo:h12
 "set guifont=DejaVu\ Sans\ Mono\ for\ Powerline:h12
-set guifont=Hack:h12
+set guifont=Hack:h14
 
 set hidden                     " allow modified buffers to be hidden without saving changes
 set history=500                " remember more previous commands
@@ -153,10 +154,11 @@ map <leader>m :NERDTreeFind<CR>
 "  AIRLINE
 "
 set laststatus=2 " always display the status bar, even with single pane
-let g:airline_powerline_fonts = 1
 let g:airline_section_b = '' " don't show branch info
 "let g:airline_section_c = '%t' " only show name of the file, not whole path
 let g:airline_inactive_collapse = 1
+let g:airline_powerline_fonts = 1
+let g:airline_theme='wombat'
 
 "  ALE
 "
