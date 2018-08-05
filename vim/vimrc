@@ -158,7 +158,7 @@ let g:airline_section_b = '' " don't show branch info
 "let g:airline_section_c = '%t' " only show name of the file, not whole path
 let g:airline_inactive_collapse = 1
 let g:airline_powerline_fonts = 1
-let g:airline_theme='wombat'
+let g:airline_theme='dark'
 
 "  ALE
 "
