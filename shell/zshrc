@@ -14,7 +14,9 @@ plugins=(
   jira
   osx
   pip
+  python
   pyenv
+  rand-quote
   yarn
 )
 
@@ -55,14 +57,14 @@ export ANDROID_HOME=$HOME/Library/Android/sdk
 export PATH=$PATH:$ANDROID_HOME/tools
 export PATH=$PATH:$ANDROID_HOME/platform-tools
 
-# hh config
-export HH_CONFIG=hicolor
-bindkey -s "\C-r" "\eqhh\n"
+# hstr config
+export HSTR_CONFIG=hicolor,raw-history-view
+bindkey -s "\C-r" "\eqhstr\n"
 
 
 ### PYTHON
 
-export PYTHONPATH=/Users/douglas/eigen/repos/eigen:/Users/douglas/eigen/repos/:$PYTHONPATH
+export PYTHONPATH=/Users/douglas/eigen/repos/eigen:/Users/douglas/eigen/repos/:/Users/douglas/eigen/repos/performance_monitor/:$PYTHONPATH
 export PYLINTRC=/Users/douglas/.pylintrc
 
 # remove all pyc files in current dir
