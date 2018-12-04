@@ -142,6 +142,7 @@ endif
 
 "  NERDTREE
 "
+let g:NERDTreeWinSize = 40
 let g:NERDTreeChDirMode = 2 " change vim working dir when nerdtree root changes
 let g:NERDTreeCascadeSingleChildDir = 0 " don't collapse single child nodes by default
 let g:NERDTreeIgnore = ['\.vim$', '\~$', '__pycache__$[[dir]]']
@@ -167,9 +168,11 @@ let g:ale_linters = {
 \  'javascript': ['eslint', 'flow'],
 \  'go': ['go', 'gofmt', 'govet'],
 \}
-let g:ale_python_pylint_options = '--load-plugins pylint_django'
 let g:ale_lint_on_text_changed = 'never' " don't lint while editing
 let g:ale_echo_msg_format = '%linter% says: %s'
+
+let g:ale_python_pylint_change_directory = 0
+let g:ale_python_pylint_options = '--load-plugins pylint_django'
 
 "  YOUCOMPLETEME
 "
