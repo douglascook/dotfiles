@@ -116,12 +116,12 @@ map q: :q
 nnoremap <leader>a :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>:w<CR>
 
 " add a pdb breakpoint
-function! InsertPdb()
+function! InsertIpdb()
     let trace = expand("import ipdb; ipdb.set_trace()")
     execute "normal o".trace
 endfunction
 
-nnoremap <leader>p :call InsertPdb()<CR>
+nnoremap <leader>p :call InsertIpdb()<CR>
 
 " colour schemes
 nnoremap <F2> :colorscheme wombat256mod<CR>
@@ -173,6 +173,21 @@ let g:ale_echo_msg_format = '%linter% says: %s'
 
 let g:ale_python_pylint_change_directory = 0
 let g:ale_python_pylint_options = '--load-plugins pylint_django'
+
+" only enable pylint plugin if its installed in the current python environment
+"function! EnablePylintDjango()
+  "echo system('which python')
+  "let output = system('python -c "import pylint_django"')
+  "if empty(output)
+    "echo 'Enabling django plugin for pylint'
+    "let g:ale_python_pylint_options = '--load-plugins pylint_django'
+  "else
+    "echo 'Disabling django plugin for pylint'
+    "let g:ale_python_pylint_options = ''
+  "endif
+  "return 1
+"endfunction
+"call EnablePylintDjango()
 
 "  YOUCOMPLETEME
 "
