@@ -17,7 +17,7 @@ Plug 'ap/vim-css-color'
 
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
-Plug 'tommcdo/vim-fubitive' " enable fugitive bitbucket browsing
+Plug 'airblade/vim-gitgutter'
 
 Plug 'hdima/python-syntax'
 Plug 'pangloss/vim-javascript'
@@ -31,7 +31,7 @@ call plug#end()
 
 
 " ----------------------------- NORMAL STUFF ------------------------------
-"
+
 colorscheme wombat256mod
 set number			               " show line numbers
 
@@ -65,8 +65,9 @@ set incsearch
 set smartcase                  " case insensitive search unless capitals are specified
 set ignorecase
 
-set backupdir=~/.vim/backup//  " this should put all swap files and backups in one folder
+set backupdir=~/.vim/backup//  " put all swap files and backups in one folder
 set directory=~/.vim/swp//
+set updatetime=500             " write swap files every 500ms, dictates git-gutter update rate
 
 set modelines=0                " something to do with a security flaw
 set nocompatible
@@ -94,13 +95,15 @@ set diffopt=filler,vertical,foldcolumn:4
 
 " ---------------------------- SHORTCUT MAPPINGS ----------------------------
 " can't have inline commments here, whitespace after the mapping is added to it!
-"
+
 " get rid of highlighting
 nnoremap <leader><space> :noh<CR>
 
 " saving
 nnoremap <leader>s :w<CR>
 cnoreabbrev W w
+" strip all trailing whitespace and save
+nnoremap <leader>a :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>:w<CR>
 
 " quitting
 nnoremap <leader>q :q<CR>
@@ -111,9 +114,6 @@ map q: :q
 " get rid of annoying f1 help popup
 :nmap <F1> <nop>
 :imap <F1> <nop>
-
-" strip all trailing whitespace and save
-nnoremap <leader>a :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>:w<CR>
 
 " add a pdb breakpoint
 function! InsertIpdb()
@@ -141,7 +141,6 @@ endif
 " ----------------------------- PLUGINS -----------------------------
 
 "  NERDTREE
-"
 let g:NERDTreeWinSize = 40
 let g:NERDTreeChDirMode = 2 " change vim working dir when nerdtree root changes
 let g:NERDTreeCascadeSingleChildDir = 0 " don't collapse single child nodes by default
@@ -152,8 +151,8 @@ let g:nerdtree_tabs_open_on_gui_startup = 0
 map <leader>n :NERDTreeTabsToggle<CR>
 map <leader>m :NERDTreeFind<CR>
 
+
 "  AIRLINE
-"
 set laststatus=2 " always display the status bar, even with single pane
 let g:airline_section_b = '' " don't show branch info
 "let g:airline_section_c = '%t' " only show name of the file, not whole path
@@ -161,8 +160,8 @@ let g:airline_inactive_collapse = 1
 let g:airline_powerline_fonts = 1
 let g:airline_theme='dark'
 
+
 "  ALE
-"
 let g:ale_linters = {
 \  'python': ['pylint'],
 \  'javascript': ['eslint', 'flow'],
@@ -172,25 +171,9 @@ let g:ale_lint_on_text_changed = 'never' " don't lint while editing
 let g:ale_echo_msg_format = '%linter% says: %s'
 
 let g:ale_python_pylint_change_directory = 0
-let g:ale_python_pylint_options = '--load-plugins pylint_django'
 
-" only enable pylint plugin if its installed in the current python environment
-"function! EnablePylintDjango()
-  "echo system('which python')
-  "let output = system('python -c "import pylint_django"')
-  "if empty(output)
-    "echo 'Enabling django plugin for pylint'
-    "let g:ale_python_pylint_options = '--load-plugins pylint_django'
-  "else
-    "echo 'Disabling django plugin for pylint'
-    "let g:ale_python_pylint_options = ''
-  "endif
-  "return 1
-"endfunction
-"call EnablePylintDjango()
 
 "  YOUCOMPLETEME
-"
 let g:ycm_filetype_blacklist = {'sql': 1, 'csv': 1, 'txt': 1}
 let g:ycm_python_binary_path = 'python' " use first python on path, means virtualenvs work nicely
 let g:ycm_autoclose_preview_window_after_insertion = 1
@@ -198,8 +181,8 @@ let g:ycm_autoclose_preview_window_after_insertion = 1
 " useful for jumping to source of third party libraries
 nnoremap <leader>d :YcmCompleter GoToDefinition<CR>
 
+
 "  CTRLP
-"
 let g:ctrlp_working_path_mode = 'r' " use the nearest .git directory as working directory
 let g:ctrlp_custom_ignore = {
 \   'dir': '\v[\/](\.git|node_modules|fonts)$',
@@ -210,15 +193,19 @@ let g:ctrlp_max_files = 0
 nmap <C-j> :CtrlPBuffer<CR>
 nmap <C-k> :CtrlPTag<CR>
 
+
 " PYTHON SYNTAX PLUGIN
 let python_highlight_all = 1
+
 
 " JSX SYNTAX
 let g:jsx_ext_required = 0 " use on all filetypes
 
+
 " JAVASCRIPT SYNTAX
 let g:javascript_plugin_jsdoc = 1
 let g:javascript_plugin_flow = 1
+
 
 " SLIME MODE FOR VIM
 let g:slimv_repl_split = 4 " open repl in vertical split on the right
