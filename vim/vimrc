@@ -27,6 +27,7 @@ Plug 'kovisoft/slimv'
 Plug 'ElmCast/elm-vim'
 Plug 'elixir-editors/vim-elixir'
 
+Plug 'vimwiki/vimwiki', { 'branch': 'dev' }
 call plug#end()
 
 
@@ -48,8 +49,6 @@ set breakindent                " use same level indentation on wrapped lines
 set colorcolumn=80             " highlight at 80 characters
 set winwidth=90                " set current pane to width 90 (if less) when moving into it
 set cursorline                 " highlight current line
-"set guifont=Menlo:h12
-"set guifont=DejaVu\ Sans\ Mono\ for\ Powerline:h12
 set guifont=Hack:h14
 
 set hidden                     " allow modified buffers to be hidden without saving changes
@@ -77,20 +76,20 @@ set noerrorbells               " disable error noises/flashes
 set novisualbell
 set vb t_vb=
 
-" reload vimrc automatically when it is saved
-augroup reload_vimrc " {
-    autocmd! bufwritepost .vimrc source %
-augroup END " }
-
 set tags=./tags;/              " search up through directories for tags file
-
-cd ./                          " set working directory
 
 set foldmethod=indent
 set foldnestmax=2      " when there are no classes involved this will just fold the methods
 
 " diff in vertical splits by default, don't fold until 4 cols nested
 set diffopt=filler,vertical,foldcolumn:4
+
+cd ./                          " set working directory
+
+" reload vimrc automatically when it is saved
+augroup reload_vimrc " {
+    autocmd! bufwritepost .vimrc source %
+augroup END " }
 
 
 " ---------------------------- SHORTCUT MAPPINGS ----------------------------
@@ -210,3 +209,8 @@ let g:javascript_plugin_flow = 1
 " SLIME MODE FOR VIM
 let g:slimv_repl_split = 4 " open repl in vertical split on the right
 let g:paredit_mode = 0 " don't dicate parentheses!
+
+
+" VIM WIKI
+" default <leader>ww is used by windowswap plugin
+nmap <leader>w <Plug>VimwikiIndex
