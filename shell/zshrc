@@ -29,7 +29,7 @@ export HISTFILE=~/.zsh_history
 export HISTSIZE=50000000
 export HISTCONTROL=ignoredups
 
-export PATH=/usr/local/opt/imagemagick@6/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/miniconda3/bin
+export PATH=/usr/local/bin:/usr/local/sbin:/usr/local/opt/python/libexec/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/miniconda3/bin
 # imagemagick is built in so need to give brew version priority
 export PATH=/usr/local/opt/imagemagick@6/bin:$PATH
 
@@ -64,15 +64,7 @@ bindkey -s "\C-r" "\eqhstr\n"
 
 ### PYTHON
 
-export PYTHONPATH=/Users/douglas/eigen/repos/eigen:/Users/douglas/eigen/repos/:/Users/douglas/eigen/repos/performance_monitor/:$PYTHONPATH
 export PYLINTRC=/Users/douglas/.pylintrc
 
 # remove all pyc files in current dir
 alias killpyc="find . -name '*.pyc' -delete"
-
-# get pyenv to work
-eval "$(pyenv init -)"
-
-export PYENV_VIRTUALENVWRAPPER_PREFER_PYVENV="true"
-# initialise pyenv-virtualenvwrapper
-pyenv virtualenvwrapper
