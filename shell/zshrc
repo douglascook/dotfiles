@@ -10,12 +10,10 @@ JIRA_RAPID_BOARD="true"
 
 plugins=(
   gitfast
-  django
   jira
   osx
   pip
   python
-  pyenv
   rand-quote
   yarn
 )
@@ -30,10 +28,6 @@ export HISTSIZE=50000000
 export HISTCONTROL=ignoredups
 
 export PATH=/usr/local/bin:/usr/local/sbin:/usr/local/opt/python/libexec/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/miniconda3/bin
-# imagemagick is built in so need to give brew version priority
-export PATH=/usr/local/opt/imagemagick@6/bin:$PATH
-
-export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_131.jdk/Contents/Home
 
 # enable iterm integration
 source ~/.iterm2_shell_integration.zsh
