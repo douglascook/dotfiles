@@ -9,8 +9,11 @@ HIST_STAMPS="yyyy-mm-dd"
 JIRA_RAPID_BOARD="true"
 
 plugins=(
+  docker
+  docker-compose
   gitfast
   jira
+  kubectl
   osx
   pip
   python
@@ -59,6 +62,10 @@ bindkey -s "\C-r" "\eqhstr\n"
 ### PYTHON
 
 export PYLINTRC=/Users/douglas/.pylintrc
+
+# virtual env wrapper bits
+export WORKON_HOME=$HOME/.virtualenvs
+source /usr/local/bin/virtualenvwrapper.sh
 
 # remove all pyc files in current dir
 alias killpyc="find . -name '*.pyc' -delete"

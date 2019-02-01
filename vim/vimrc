@@ -85,8 +85,7 @@ set vb t_vb=
 
 set tags=./tags;/              " search up through directories for tags file
 
-set foldmethod=indent
-set foldnestmax=2      " when there are no classes involved this will just fold the methods
+set foldmethod=syntax
 
 " diff in vertical splits by default, don't fold until 4 cols nested
 set diffopt=filler,vertical,foldcolumn:4
@@ -180,7 +179,7 @@ let g:ale_python_pylint_change_directory = 0
 
 
 "  YOUCOMPLETEME
-let g:ycm_filetype_blacklist = {'sql': 1, 'csv': 1, 'txt': 1}
+let g:ycm_filetype_blacklist = {'sql': 1, 'csv': 1, 'txt': 1, 'wiki': 1}
 let g:ycm_python_binary_path = 'python' " use first python on path, means virtualenvs work nicely
 let g:ycm_autoclose_preview_window_after_insertion = 1
 
@@ -221,3 +220,5 @@ let g:paredit_mode = 0 " don't dicate parentheses!
 " VIM WIKI
 " default <leader>ww is used by windowswap plugin
 nmap <leader>w <Plug>VimwikiIndex
+
+let g:vimwiki_folding = 'expr' " enable folding - not doign anything for some reason
