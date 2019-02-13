@@ -30,7 +30,7 @@ export HISTFILE=~/.zsh_history
 export HISTSIZE=50000000
 export HISTCONTROL=ignoredups
 
-export PATH=/usr/local/bin:/usr/local/sbin:/usr/local/opt/python/libexec/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/miniconda3/bin
+export PATH=/usr/local/bin:/usr/local/sbin:/usr/local/opt/python/libexec/bin:/usr/bin:/bin:/usr/sbin:/sbin
 
 # enable iterm integration
 source ~/.iterm2_shell_integration.zsh

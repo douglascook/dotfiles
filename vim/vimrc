@@ -221,4 +221,4 @@ let g:paredit_mode = 0 " don't dicate parentheses!
 " default <leader>ww is used by windowswap plugin
 nmap <leader>w <Plug>VimwikiIndex
 
-let g:vimwiki_folding = 'expr' " enable folding - not doign anything for some reason
+let g:vimwiki_folding = 'expr' " enable folding
