@@ -26,13 +26,9 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
 Plug 'airblade/vim-gitgutter'
 
-Plug 'hdima/python-syntax'
-Plug 'pangloss/vim-javascript'
-Plug 'mxw/vim-jsx'
+Plug 'sheerun/vim-polyglot'
 Plug 'ternjs/tern_for_vim', { 'do': 'yarn'}
 Plug 'kovisoft/slimv'
-Plug 'ElmCast/elm-vim'
-Plug 'elixir-editors/vim-elixir'
 
 Plug 'vimwiki/vimwiki', { 'branch': 'dev' }
 call plug#end()
