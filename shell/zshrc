@@ -63,9 +63,20 @@ bindkey -s "\C-r" "\eqhstr\n"
 
 export PYLINTRC=/Users/douglas/.pylintrc
 
-# virtual env wrapper bits
-export WORKON_HOME=$HOME/.virtualenvs
-source /usr/local/bin/virtualenvwrapper.sh
-
 # remove all pyc files in current dir
 alias killpyc="find . -name '*.pyc' -delete"
+
+# virtualenvwrapper-like helper functions
+mkdir -p /Users/douglas/.virtualenvs
+function mkvirtualenv {
+  python -m venv /Users/douglas/.virtualenvs/$1
+  source /Users/douglas/.virtualenvs/$1/bin/activate
+}
+
+function rmvirtualenv {
+  rm -r /Users/douglas/.virtualenvs/$1
+}
+
+function workon {
+  source /Users/douglas/.virtualenvs/$1/bin/activate
+}
