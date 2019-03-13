@@ -57,7 +57,7 @@ set guifont=Hack\ Nerd\ Font\ Mono:h12
 
 set hidden                     " allow modified buffers to be hidden without saving changes
 set history=500                " remember more previous commands
-set synmaxcol=160              " only do syntax highlighting on first columns for speedup
+set synmaxcol=500              " only do syntax highlighting on first columns for speedup with very long lines
 
 set wildmenu                   " fix autocomplete for opening files with :e
 set wildmode=longest:full,list:full
@@ -166,10 +166,10 @@ let g:airline_theme='dark'
 let g:ale_linters = {
 \  'python': ['pylint'],
 \  'javascript': ['eslint', 'flow'],
-\  'go': ['go', 'gofmt', 'govet'],
 \}
 let g:ale_lint_on_text_changed = 'never' " don't lint while editing
 let g:ale_echo_msg_format = '%linter% says: %s'
+let g:ale_maximum_file_size = 1000000 " don't try to lint massive files eg data files
 
 let g:ale_python_pylint_change_directory = 0
 
