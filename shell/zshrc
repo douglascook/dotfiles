@@ -68,9 +68,14 @@ alias killpyc="find . -name '*.pyc' -delete"
 
 # virtualenvwrapper-like helper functions
 mkdir -p /Users/douglas/.virtualenvs
+
 function mkvirtualenv {
-  python -m venv /Users/douglas/.virtualenvs/$1
-  source /Users/douglas/.virtualenvs/$1/bin/activate
+  if [[ $1 = "" ]]; then
+    echo "Please specify a name for your environment";
+  else
+    python -m venv /Users/douglas/.virtualenvs/$1;
+    source /Users/douglas/.virtualenvs/$1/bin/activate;
+  fi
 }
 
 function rmvirtualenv {
@@ -78,5 +83,9 @@ function rmvirtualenv {
 }
 
 function workon {
-  source /Users/douglas/.virtualenvs/$1/bin/activate
+  if [[ $1 = "" ]]; then
+    ls -1 /Users/douglas/.virtualenvs/;
+  else
+    source /Users/douglas/.virtualenvs/$1/bin/activate;
+  fi
 }
