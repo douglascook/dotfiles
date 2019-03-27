@@ -27,6 +27,7 @@ Plug 'tpope/vim-rhubarb'
 Plug 'airblade/vim-gitgutter'
 
 Plug 'sheerun/vim-polyglot'
+Plug 'ambv/black'
 Plug 'ternjs/tern_for_vim', { 'do': 'yarn'}
 Plug 'kovisoft/slimv'
 
