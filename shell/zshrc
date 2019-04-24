@@ -9,6 +9,7 @@ HIST_STAMPS="yyyy-mm-dd"
 JIRA_RAPID_BOARD="true"
 
 plugins=(
+  aws
   docker
   docker-compose
   gitfast
@@ -51,8 +52,12 @@ export GIT_EDITOR=vim
 
 # android development stuff
 export ANDROID_HOME=$HOME/Library/Android/sdk
-export PATH=$PATH:$ANDROID_HOME/tools
+export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/tools/bin
 export PATH=$PATH:$ANDROID_HOME/platform-tools
+export PATH=$PATH:$ANDROID_HOME/emulator
+export JAVA_HOME="/Library/Java/JavaVirtualMachines/openjdk-12.jdk/Contents/Home"
+
+export REACT_EDITOR=mvim
 
 # hstr config
 export HSTR_CONFIG=hicolor,raw-history-view

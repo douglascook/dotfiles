@@ -58,7 +58,7 @@ set guifont=Hack\ Nerd\ Font\ Mono:h12
 
 set hidden                     " allow modified buffers to be hidden without saving changes
 set history=500                " remember more previous commands
-set synmaxcol=500              " only do syntax highlighting on first columns for speedup with very long lines
+set synmaxcol=200              " only do syntax highlighting on first columns for speedup with very long lines
 
 set wildmenu                   " fix autocomplete for opening files with :e
 set wildmode=longest:full,list:full
