@@ -24,10 +24,10 @@ plugins=(
 
 source $ZSH/oh-my-zsh.sh
 
-export HISTFILE=~/.zsh_history
 
 ### GENERAL
 
+export HISTFILE=~/.zsh_history
 export HISTSIZE=50000000
 export HISTCONTROL=ignoredups
 
@@ -50,18 +50,14 @@ alias ctags="`brew --prefix`/bin/ctags"
 # git defaults to vi which will use built in vim instead of brew one
 export GIT_EDITOR=vim
 
-# android development stuff
-export ANDROID_HOME=$HOME/Library/Android/sdk
-export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/tools/bin
-export PATH=$PATH:$ANDROID_HOME/platform-tools
-export PATH=$PATH:$ANDROID_HOME/emulator
-export JAVA_HOME="/Library/Java/JavaVirtualMachines/openjdk-12.jdk/Contents/Home"
+# fzf setup and config
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+# remap file find binding
+bindkey -r '^T'
+bindkey '^F' fzf-file-widget
 
-export REACT_EDITOR=mvim
-
-# hstr config
-export HSTR_CONFIG=hicolor,raw-history-view
-bindkey -s "\C-r" "\eqhstr\n"
+# no-height means ALWAYS use fullscreen, including for built in keybindings
+export FZF_DEFAULT_OPTS="--reverse --no-mouse --no-height --preview 'head -50 {}'"
 
 
 ### PYTHON
@@ -94,3 +90,15 @@ function workon {
     source /Users/douglas/.virtualenvs/$1/bin/activate;
   fi
 }
+
+
+### JAVASCRIPT
+
+export REACT_EDITOR=mvim
+
+# react-native development stuff
+export ANDROID_HOME=$HOME/Library/Android/sdk
+export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/tools/bin
+export PATH=$PATH:$ANDROID_HOME/platform-tools
+export PATH=$PATH:$ANDROID_HOME/emulator
+export JAVA_HOME="/Library/Java/JavaVirtualMachines/openjdk-12.jdk/Contents/Home"
