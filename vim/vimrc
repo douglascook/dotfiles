@@ -20,7 +20,8 @@ Plug 'wesQ3/vim-windowswap'
 Plug 'scrooloose/nerdcommenter'
 Plug 'flazz/vim-colorschemes'
 Plug 'tpope/vim-unimpaired'
-Plug 'ap/vim-css-color'
+" can't use css colour until it can be disabled for certain filetypes eg json
+"Plug 'ap/vim-css-color', { 'for': ['css', 'sass', 'less', 'jsx', 'js', 'html'] }
 
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
@@ -75,6 +76,8 @@ set updatetime=500             " write swap files every 500ms, dictates git-gutt
 set modelines=0                " something to do with a security flaw
 set nocompatible
 set encoding=utf-8
+set ttyfast
+set lazyredraw
 
 set noerrorbells               " disable error noises/flashes
 set novisualbell
@@ -90,9 +93,14 @@ set diffopt=filler,vertical,foldcolumn:4
 cd ./                          " set working directory
 
 " reload vimrc automatically when it is saved
-augroup reload_vimrc " {
+augroup reload_vimrc
     autocmd! bufwritepost .vimrc source %
-augroup END " }
+augroup END
+
+" syntax highlighting slows down loading for larger files
+augroup large_files
+  autocmd Filetype json if getfsize(@%) > 1000 | setlocal syntax=off foldmethod=indent | endif
+augroup END
 
 
 " ---------------------------- SHORTCUT MAPPINGS ----------------------------
@@ -176,7 +184,7 @@ let g:ale_python_pylint_change_directory = 0
 
 
 " YOUCOMPLETEME
-let g:ycm_filetype_blacklist = {'sql': 1, 'csv': 1, 'txt': 1, 'wiki': 1}
+let g:ycm_filetype_blacklist = {'sql': 1, 'csv': 1, 'txt': 1, 'wiki': 1, 'json': 1}
 let g:ycm_python_binary_path = 'python' " use first python on path, means virtualenvs work nicely
 let g:ycm_autoclose_preview_window_after_insertion = 1
 
