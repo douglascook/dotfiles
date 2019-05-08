@@ -182,6 +182,15 @@ let g:ale_maximum_file_size = 1000000 " don't try to lint massive files eg data 
 
 let g:ale_python_pylint_change_directory = 0
 
+" enable django pylint plugin for environments its installed in
+autocmd Filetype python call EnablePylintDjangoIfInstalled()
+function EnablePylintDjangoIfInstalled()
+  let importError = system('python -c "import pylint_django"')
+  if importError == ''
+    let g:ale_python_pylint_options = '--load-plugins pylint_django'
+  endif
+endfunction
+
 
 " YOUCOMPLETEME
 let g:ycm_filetype_blacklist = {'sql': 1, 'csv': 1, 'txt': 1, 'wiki': 1, 'json': 1}
