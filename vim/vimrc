@@ -73,7 +73,7 @@ set backupdir=~/.vim/backup//  " put all swap files and backups in one folder
 set directory=~/.vim/swp//
 set updatetime=500             " write swap files every 500ms, dictates git-gutter update rate
 
-set modelines=0                " something to do with a security flaw
+set modelines=0                " fix potential vulnerability https://www.cvedetails.com/cve/CVE-2007-2438/
 set nocompatible
 set encoding=utf-8
 set ttyfast
