@@ -14,8 +14,8 @@ Plug 'scrooloose/nerdtree'
 Plug 'jistr/vim-nerdtree-tabs'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'ctrlpvim/ctrlp.vim'
-Plug 'easymotion/vim-easymotion'
+Plug '/usr/local/opt/fzf'
+Plug 'junegunn/fzf.vim'
 Plug 'wesQ3/vim-windowswap'
 Plug 'scrooloose/nerdcommenter'
 Plug 'flazz/vim-colorschemes'
@@ -201,26 +201,23 @@ let g:ycm_autoclose_preview_window_after_insertion = 1
 nnoremap <leader>d :YcmCompleter GoToDefinition<CR>
 
 
-" CTRLP
-let g:ctrlp_working_path_mode = 'r' " use the nearest .git directory as working directory
-let g:ctrlp_custom_ignore = {
-\   'dir': '\v[\/](\.git|node_modules|fonts)$',
-\   'file': '\v\.pyc$',
-\}
-let g:ctrlp_max_files = 0
-
-nmap <C-j> :CtrlPBuffer<CR>
-nmap <C-k> :CtrlPTag<CR>
+" FZF
+" exclude all files ignored by git and include untracked files
+nmap <C-p> :GFiles --exclude-standard --others --cached<CR>
+nmap <C-j> :Buffers<CR>
 
 
 " POLYGLOT SYNTAX
 let g:polyglot_disabled = ['yaml']
 
+
 " PYTHON
 let python_highlight_all = 1
 
+
 " JSX
 let g:jsx_ext_required = 0 " use on all filetypes
+
 
 " JAVASCRIPT
 let g:javascript_plugin_jsdoc = 1

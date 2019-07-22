@@ -50,14 +50,19 @@ alias ctags="`brew --prefix`/bin/ctags"
 # git defaults to vi which will use built in vim instead of brew one
 export GIT_EDITOR=vim
 
-# fzf setup and config
+
+### FZF SETUP AND CONFIG
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-# remap file find binding
+
+# file search
+export FZF_CTRL_T_OPTS="--reverse --no-mouse --height 60% --preview 'head -50 {}'"
+
+# history search
+export FZF_CTRL_R_OPTS="--reverse --no-mouse"
+
+# remap file find binding (remove and set)
 bindkey -r '^T'
 bindkey '^F' fzf-file-widget
-
-# no-height means ALWAYS use fullscreen, including for built in keybindings
-export FZF_DEFAULT_OPTS="--reverse --no-mouse --no-height --preview 'head -50 {}'"
 
 
 ### PYTHON
