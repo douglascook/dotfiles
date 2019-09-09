@@ -55,7 +55,7 @@ set colorcolumn=80             " highlight at 80 characters
 set winwidth=90                " set current pane to width 90 (if less) when moving into it
 set cursorline                 " highlight current line
 set scrolloff=8                " keep 3 lines visible around current line when scrolling
-set guifont=Hack\ Nerd\ Font\ Mono:h12
+set guifont=Hack\ Nerd\ Font\ Mono:h14
 
 set hidden                     " allow modified buffers to be hidden without saving changes
 set history=500                " remember more previous commands
