@@ -8,7 +8,7 @@ endif
 " -------------------------- PLUGIN SETUP ---------------------------------
 call plug#begin('~/.vim/bundle')
 Plug 'w0rp/ale'
-Plug 'Valloric/YouCompleteMe', { 'do': './install.py --tern-completer' }
+Plug 'Valloric/YouCompleteMe', { 'do': './install.py --ts-completer' }
 
 Plug 'scrooloose/nerdtree'
 Plug 'jistr/vim-nerdtree-tabs'
@@ -29,7 +29,6 @@ Plug 'airblade/vim-gitgutter'
 
 Plug 'sheerun/vim-polyglot'
 Plug 'ambv/black'
-Plug 'ternjs/tern_for_vim', { 'do': 'yarn'}
 Plug 'kovisoft/slimv'
 
 Plug 'vimwiki/vimwiki', { 'branch': 'dev' }
