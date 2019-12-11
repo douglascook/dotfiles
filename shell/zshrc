@@ -68,6 +68,7 @@ bindkey '^F' fzf-file-widget
 ### PYTHON
 
 export PYLINTRC=/Users/douglas/.pylintrc
+export PYTHONBREAKPOINT=ipdb.set_trace
 
 # remove all pyc files in current dir
 alias killpyc="find . -name '*.pyc' -delete"

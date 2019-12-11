@@ -124,13 +124,13 @@ map q: :q
 :nmap <F1> <nop>
 :imap <F1> <nop>
 
-" add a pdb breakpoint
-function! InsertIpdb()
-    let trace = expand("import ipdb; ipdb.set_trace()")
+" add a python breakpoint
+function! InsertBreakpoint()
+    let trace = expand("breakpoint()")
     execute "normal o".trace
 endfunction
 
-nnoremap <leader>p :call InsertIpdb()<CR>
+nnoremap <leader>p :call InsertBreakpoint()<CR>
 
 " colour schemes
 nnoremap <F2> :colorscheme wombat256mod<CR>
