@@ -50,6 +50,8 @@ alias ctags="`brew --prefix`/bin/ctags"
 # git defaults to vi which will use built in vim instead of brew one
 export GIT_EDITOR=vim
 
+alias tigs="tig status"
+
 
 ### FZF SETUP AND CONFIG
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
