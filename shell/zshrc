@@ -31,8 +31,6 @@ export HISTFILE=~/.zsh_history
 export HISTSIZE=50000000
 export HISTCONTROL=ignoredups
 
-export PATH=/usr/local/bin:/usr/local/sbin:/usr/local/opt/python/libexec/bin:/usr/bin:/bin:/usr/sbin:/sbin
-
 # enable iterm integration
 source ~/.iterm2_shell_integration.zsh
 
@@ -68,6 +66,8 @@ bindkey '^F' fzf-file-widget
 
 
 ### PYTHON
+
+export PATH=$PATH:/usr/local/opt/python/libexec/bin
 
 export PYLINTRC=/Users/douglas/.pylintrc
 export PYTHONBREAKPOINT=ipdb.set_trace
