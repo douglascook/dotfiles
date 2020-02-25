@@ -203,8 +203,10 @@ let g:ycm_filetype_blacklist = {'sql': 1, 'csv': 1, 'txt': 1, 'wiki': 1, 'json':
 let g:ycm_python_binary_path = 'python' " use first python on path, means virtualenvs work nicely
 let g:ycm_autoclose_preview_window_after_insertion = 1
 
-" useful for jumping to source of third party libraries
-nnoremap <leader>d :YcmCompleter GoToDefinition<CR>
+" with jedi this will jump to the function/class definition, rather than the import
+nnoremap <leader>d :YcmCompleter GoToType<CR>
+" this will jump to the import
+nnoremap <leader>f :YcmCompleter GoToDefinition<CR>
 
 
 " FZF
