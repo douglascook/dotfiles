@@ -29,7 +29,8 @@ Plug 'tpope/vim-rhubarb'
 Plug 'airblade/vim-gitgutter'
 
 Plug 'sheerun/vim-polyglot'
-Plug 'ambv/black'
+" pin black at version compatible with latest black version on PyPI
+Plug 'psf/black', { 'tag': '19.10b0' }
 Plug 'kovisoft/slimv'
 
 Plug 'vimwiki/vimwiki', { 'branch': 'dev' }
