@@ -13,13 +13,10 @@ plugins=(
   docker
   docker-compose
   gitfast
-  jira
-  kubectl
   osx
   pip
   python
   rand-quote
-  yarn
 )
 
 source $ZSH/oh-my-zsh.sh
