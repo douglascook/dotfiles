@@ -8,7 +8,7 @@ endif
 " -------------------------- PLUGIN SETUP ---------------------------------
 call plug#begin('~/.vim/bundle')
 Plug 'w0rp/ale'
-Plug 'Valloric/YouCompleteMe', { 'do': './install.py --ts-completer --rust-completer' }
+Plug 'ycm-core/YouCompleteMe', { 'do': './install.py --ts-completer' }
 
 Plug 'scrooloose/nerdtree'
 Plug 'jistr/vim-nerdtree-tabs'
@@ -186,7 +186,7 @@ let g:ale_fix_on_save = 1
 let g:ale_echo_msg_format = '%linter% says: %s'
 let g:ale_maximum_file_size = 1000000 " don't try to lint massive files eg data files
 
-let g:ale_python_pylint_change_directory = 0
+let g:ale_python_pylint_change_directory = 1
 let g:ale_python_mypy_ignore_invalid_syntax = 1
 
 " enable django pylint plugin for environments its installed in
