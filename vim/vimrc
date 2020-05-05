@@ -208,6 +208,10 @@ let g:ycm_autoclose_preview_window_after_insertion = 1
 nnoremap <leader>d :YcmCompleter GoToType<CR>
 " this will jump to the import
 nnoremap <leader>f :YcmCompleter GoToDefinition<CR>
+" disable documentation auto popup
+let g:ycm_auto_hover = ''
+" manually turn it on for what's under the cursor
+nmap <leader>g <Plug>(YCMHover)
 
 
 " FZF
