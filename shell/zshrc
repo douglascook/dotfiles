@@ -79,7 +79,7 @@ function mkvirtualenv {
   if [[ $1 = "" ]]; then
     echo "Please specify a name for your environment";
   else
-    python -m venv /Users/douglas/.virtualenvs/$1;
+    python3 -m venv /Users/douglas/.virtualenvs/$1;
     source /Users/douglas/.virtualenvs/$1/bin/activate;
   fi
 }
