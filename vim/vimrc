@@ -78,6 +78,7 @@ set nocompatible
 set encoding=utf-8
 set ttyfast
 set lazyredraw
+set autoread                   " reload buffer automatically if file changed outside vim
 
 set noerrorbells               " disable error noises/flashes
 set novisualbell
