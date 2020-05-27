@@ -7,7 +7,7 @@ endif
 
 " -------------------------- PLUGIN SETUP ---------------------------------
 call plug#begin('~/.vim/bundle')
-Plug 'w0rp/ale'
+Plug 'dense-analysis/ale'
 Plug 'ycm-core/YouCompleteMe', { 'do': './install.py --ts-completer' }
 
 Plug 'preservim/nerdtree'
@@ -32,7 +32,7 @@ Plug 'sheerun/vim-polyglot'
 Plug 'psf/black', { 'branch': 'stable' }
 Plug 'kovisoft/slimv'
 
-Plug 'vimwiki/vimwiki', { 'branch': 'dev' }
+Plug 'vimwiki/vimwiki'
 call plug#end()
 
 
