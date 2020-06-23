@@ -36,6 +36,9 @@ function tunnel {
    ssh -f $1 -L $2:localhost:$3 -N
 }
 
+# before tricky rebases...
+alias backup-branch='git branch -D backup && git branch backup'
+
 
 ### HOMEBREW
 
