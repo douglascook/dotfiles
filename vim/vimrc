@@ -232,3 +232,4 @@ let g:paredit_mode = 0 " don't dicate parentheses!
 
 " VIM WIKI
 let g:vimwiki_folding = 'expr' " enable folding
+let g:vimwiki_global_ext = 0 " don't enable for random markdown files!
