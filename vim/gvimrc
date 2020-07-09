@@ -1,3 +1,5 @@
+" default background is a bit too light with osx font smoothing turned off
+let g:seoul256_background = 236
 colorscheme seoul256
 
 "remove left and right scroll bars
