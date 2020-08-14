@@ -28,7 +28,7 @@ Plug 'airblade/vim-gitgutter'
 
 Plug 'sheerun/vim-polyglot'
 " pin black at version compatible with latest black version on PyPI
-Plug 'psf/black', { 'branch': 'stable' }
+Plug 'psf/black'
 
 Plug 'vimwiki/vimwiki'
 call plug#end()
