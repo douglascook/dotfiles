@@ -11,7 +11,6 @@ Plug 'dense-analysis/ale'
 Plug 'ycm-core/YouCompleteMe', { 'do': './install.py --ts-completer' }
 
 Plug 'preservim/nerdtree'
-Plug 'jistr/vim-nerdtree-tabs'
 Plug 'vim-airline/vim-airline'
 Plug 'enricobacis/vim-airline-clock'
 Plug '/usr/local/opt/fzf'
@@ -150,9 +149,7 @@ let g:NERDTreeChDirMode = 2 " change vim working dir when nerdtree root changes
 let g:NERDTreeCascadeSingleChildDir = 0 " don't collapse single child nodes by default
 let g:NERDTreeIgnore = ['\.vim$', '\~$', '__pycache__$[[dir]]']
 
-let g:nerdtree_tabs_open_on_gui_startup = 0
-
-map <leader>n :NERDTreeTabsToggle<CR>
+map <leader>n :NERDTreeToggle<CR>
 map <leader>m :NERDTreeFind<CR>
 
 
