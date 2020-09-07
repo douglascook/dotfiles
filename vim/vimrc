@@ -15,11 +15,9 @@ Plug 'vim-airline/vim-airline'
 Plug 'enricobacis/vim-airline-clock'
 Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
-Plug 'preservim/nerdcommenter'
+Plug 'tpope/vim-commentary'
 Plug 'flazz/vim-colorschemes'
 Plug 'tpope/vim-unimpaired'
-" can't use css colour until it can be disabled for certain filetypes eg json
-"Plug 'ap/vim-css-color', { 'for': ['css', 'sass', 'less', 'jsx', 'js', 'html'] }
 
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
@@ -37,6 +35,10 @@ call plug#end()
 
 colorscheme wombat256mod
 set number			               " show line numbers
+
+" use space as leader
+nnoremap <SPACE> <Nop>
+let mapleader=" "
 
 set tabstop=2
 set shiftwidth=2
