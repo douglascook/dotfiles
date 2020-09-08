@@ -193,7 +193,14 @@ endfunction
 
 
 " YOUCOMPLETEME
-let g:ycm_filetype_blacklist = {'sql': 1, 'csv': 1, 'txt': 1, 'wiki': 1, 'json': 1}
+let g:ycm_filetype_blacklist = {
+\  'sql': 1,
+\  'csv': 1,
+\  'text': 1,
+\  'vimwiki': 1,
+\  'json': 1,
+\  'markdown': 1,
+\}
 let g:ycm_autoclose_preview_window_after_insertion = 1
 
 " with jedi this will jump to the function/class definition, rather than the import
