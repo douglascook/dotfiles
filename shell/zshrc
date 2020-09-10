@@ -38,6 +38,7 @@ function tunnel {
 
 # before tricky rebases...
 alias backup-branch='git branch -D backup && git branch backup'
+alias gupdate-commit='git commit --amend --no-edit'
 
 
 ### HOMEBREW
@@ -54,7 +55,11 @@ alias tigs="tig status"
 ### FZF SETUP AND CONFIG
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+# use silver searcher so .gitignore is respected, applies to fzf in vim as well
+export FZF_DEFAULT_COMMAND='ag -g ""'
+
 # file search
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_CTRL_T_OPTS="--reverse --no-mouse --height 60% --preview 'head -50 {}'"
 
 # history search
