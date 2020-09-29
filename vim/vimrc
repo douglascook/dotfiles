@@ -5,6 +5,9 @@ if empty(glob('~/.vim/autoload/plug.vim'))
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
+" need to set this before loading polyglot :|
+let g:polyglot_disabled = ['yaml']
+
 " -------------------------- PLUGIN SETUP ---------------------------------
 call plug#begin('~/.vim/bundle')
 
@@ -17,6 +20,7 @@ Plug 'psf/black'
 
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
+Plug 'shumphrey/fugitive-gitlab.vim'
 Plug 'airblade/vim-gitgutter'
 
 Plug 'vimwiki/vimwiki'
@@ -57,7 +61,7 @@ set termguicolors              " use full 24-bit colours
 set guifont=Hack\ Nerd\ Font\ Mono:h14
 
 set hidden                     " allow modified buffers to be hidden without saving changes
-set history=500                " remember more previous commands
+set history=1000               " remember more previous commands
 set synmaxcol=200              " only do syntax highlighting on first columns for speedup with very long lines
 
 set wildmenu                   " fix autocomplete for opening files with :e
@@ -115,9 +119,6 @@ nnoremap <leader>a :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>:w<CR
 " quitting
 nnoremap <leader>q :q<CR>
 
-" stop the weird command history window from popping up when trying to quit
-map q: :q
-
 " get rid of annoying f1 help popup
 :nmap <F1> <nop>
 :imap <F1> <nop>
@@ -173,8 +174,8 @@ let g:ale_linters = {
 let g:ale_fixers = {
 \  'python': ['black']
 \}
-
-let g:ale_lint_on_text_changed = 'never' " don't lint while editing
+" lint on leaving insert mode and opening or saving a buffer
+let g:ale_lint_on_text_changed = 'never'
 let g:ale_fix_on_save = 1
 let g:ale_echo_msg_format = '%linter% says: %s'
 let g:ale_maximum_file_size = 1000000 " don't try to lint massive files eg data files
@@ -220,7 +221,6 @@ nmap <C-j> :Buffers<CR>
 
 
 " POLYGLOT SYNTAX
-let g:polyglot_disabled = ['yaml']
 
 " python - https://github.com/vim-python/python-syntax
 let python_highlight_all = 1
