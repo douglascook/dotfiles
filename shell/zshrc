@@ -28,6 +28,9 @@ export HISTFILE=~/.zsh_history
 export HISTSIZE=50000000
 export HISTCONTROL=ignoredups
 
+# default to vim rather than vi
+export EDITOR=vim
+
 # enable iterm integration
 source ~/.iterm2_shell_integration.zsh
 
