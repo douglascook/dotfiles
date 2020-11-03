@@ -12,10 +12,10 @@ let g:polyglot_disabled = ['yaml']
 call plug#begin('~/.vim/bundle')
 
 Plug 'dense-analysis/ale'
-Plug 'ycm-core/YouCompleteMe', { 'do': './install.py --ts-completer' }
-Plug 'sheerun/vim-polyglot'
+Plug 'ycm-core/YouCompleteMe', { 'do': './install.py --ts-completer --clangd-completer' }
+" pin polyglot until https://github.com/sheerun/vim-polyglot/issues/624 is resolved
+Plug 'sheerun/vim-polyglot', { 'tag': 'v4.13.3' }
 Plug 'tpope/vim-commentary'
-" pin black at version compatible with latest black version on PyPI
 Plug 'psf/black'
 
 Plug 'tpope/vim-fugitive'
@@ -168,7 +168,7 @@ let g:airline_powerline_fonts = 1
 
 " ALE
 let g:ale_linters = {
-\  'python': ['pylint', 'mypy'],
+\  'python': ['pylint', 'flake8', 'mypy'],
 \  'javascript': ['eslint'],
 \}
 let g:ale_fixers = {
@@ -218,6 +218,9 @@ nmap <leader>g <Plug>(YCMHover)
 " exclude all files ignored by git and include untracked files
 nmap <C-p> :GFiles --exclude-standard --others --cached<CR>
 nmap <C-j> :Buffers<CR>
+" open at bottom of screen rather than in a pop-up
+" let g:fzf_layout = {'down': '40%'}
+" let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.6 } }
 
 
 " POLYGLOT SYNTAX
