@@ -13,10 +13,9 @@ call plug#begin('~/.vim/bundle')
 
 Plug 'dense-analysis/ale'
 Plug 'ycm-core/YouCompleteMe', { 'do': './install.py --ts-completer --clangd-completer' }
-" pin polyglot until https://github.com/sheerun/vim-polyglot/issues/624 is resolved
-Plug 'sheerun/vim-polyglot', { 'tag': 'v4.13.3' }
+Plug 'sheerun/vim-polyglot'
 Plug 'tpope/vim-commentary'
-Plug 'psf/black'
+Plug 'psf/black', { 'for': 'python' }
 
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
