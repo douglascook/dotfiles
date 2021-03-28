@@ -118,10 +118,3 @@ export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/tools/bin
 export PATH=$PATH:$ANDROID_HOME/platform-tools
 export PATH=$PATH:$ANDROID_HOME/emulator
 export JAVA_HOME="$(/usr/libexec/java_home)"
-
-
-### C++
-export PATH=/usr/local/opt/llvm/bin:$PATH
-# Get Cmake to use updated GCC, YCM no longer supports mojave xcode command line tools
-# https://gitlab.kitware.com/cmake/community/-/wikis/FAQ#how-do-i-use-a-different-compiler
-export CXX=/usr/local/bin/g++-8
