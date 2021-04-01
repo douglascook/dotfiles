@@ -39,9 +39,22 @@ function tunnel {
    ssh -f $1 -L $2:localhost:$3 -N
 }
 
+### GIT HELPERS
+
 # before tricky rebases...
 alias backup-branch='git branch -D backup && git branch backup'
+
 alias gupdate-commit='git commit --amend --no-edit'
+
+function checkout {
+  local selected_branch;
+  # git branch lists results with leading spaces so need to trim them
+  selected_branch=$(git branch -a | fzf | tr -d '[:space:]');
+
+  if [ -n "$selected_branch" ]; then
+    git checkout "${selected_branch}"
+  fi
+}
 
 
 ### HOMEBREW
