@@ -1,0 +1,37 @@
+# See https://github.com/Homebrew/homebrew-bundle
+
+# might not need all these taps?
+tap "aws/tap"
+tap "homebrew/cask"
+tap "homebrew/cask-versions"
+tap "homebrew/core"
+tap "homebrew/services"
+
+brew "git"
+brew "git-lfs"
+brew "tig"
+brew "fzf"
+brew "the_silver_searcher"
+brew "zsh"
+brew "cmake"
+brew "tldr"
+brew "htop"
+brew "watch"
+brew "coreutils"
+brew "shellcheck"
+brew "figlet"
+brew "cowsay"
+
+brew "awscli"
+
+cask "macvim"
+cask "docker"
+cask "hammerspoon"
+cask "postman"
+cask "monitorcontrol"
+cask "quicklook-json"
+cask "qlmarkdown"
+cask "qlstephen"
+cask "qlcolorcode"
+cask "vlc"
+cask "grandperspective"

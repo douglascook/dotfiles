@@ -16,6 +16,7 @@ Plug 'dense-analysis/ale'
 Plug 'ycm-core/YouCompleteMe', { 'branch': 'legacy-c++11', 'do': './install.py --ts-completer' }
 Plug 'sheerun/vim-polyglot'
 Plug 'tpope/vim-commentary'
+
 Plug 'psf/black', { 'for': 'python' }
 
 Plug 'tpope/vim-fugitive'
@@ -27,6 +28,7 @@ Plug 'vimwiki/vimwiki'
 
 Plug 'preservim/nerdtree'
 Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 Plug 'enricobacis/vim-airline-clock'
 Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
