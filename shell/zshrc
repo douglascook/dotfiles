@@ -113,10 +113,11 @@ function rmvirtualenv {
 }
 
 function workon {
-  if [[ $1 = "" ]]; then
-    ls -1 /Users/douglas/.virtualenvs/;
-  else
-    source /Users/douglas/.virtualenvs/$1/bin/activate;
+  local env_name;
+  env_name=$(ls -1 /Users/douglas/.virtualenvs | fzf);
+
+  if [ -n "$env_name" ]; then
+    source /Users/douglas/.virtualenvs/$env_name/bin/activate;
   fi
 }
 
