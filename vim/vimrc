@@ -12,8 +12,7 @@ let g:polyglot_disabled = ['yaml']
 call plug#begin('~/.vim/bundle')
 
 Plug 'dense-analysis/ale'
-" pin at last commit supporting mojave
-Plug 'ycm-core/YouCompleteMe', { 'branch': 'legacy-c++11', 'do': './install.py --ts-completer' }
+Plug 'ycm-core/YouCompleteMe', { 'do': './install.py --ts-completer' }
 Plug 'sheerun/vim-polyglot'
 Plug 'tpope/vim-commentary'
 
