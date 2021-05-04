@@ -28,7 +28,6 @@ Plug 'vimwiki/vimwiki'
 Plug 'preservim/nerdtree'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'enricobacis/vim-airline-clock'
 Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'flazz/vim-colorschemes'
@@ -92,7 +91,8 @@ set foldmethod=syntax
 " diff in vertical splits by default, don't fold until 4 cols nested
 set diffopt=filler,vertical,foldcolumn:4
 
-cd ./                          " set working directory
+" set working directory
+cd ./
 
 " reload vimrc automatically when it is saved
 augroup reload_vimrc
@@ -162,9 +162,17 @@ map <leader>m :NERDTreeFind<CR>
 " AIRLINE
 set laststatus=2 " always display the status bar, even with single pane
 let g:airline_section_b = '' " don't show branch info
-"let g:airline_section_c = '%t' " only show name of the file, not whole path
 let g:airline_inactive_collapse = 1
 let g:airline_powerline_fonts = 1
+
+let g:airline_highlighting_cache = 1
+" fewer extensions == faster
+let g:airline_extensions = ['fzf', 'quickfix']
+" devicons slow things down
+let g:webdevicons_enable_airline_tabline = 0
+let g:webdevicons_enable_airline_statusline = 0
+" experimental SHOULD be more performant...
+" let g:airline_experimental = 1
 
 
 " ALE
@@ -179,10 +187,12 @@ let g:ale_fixers = {
 let g:ale_lint_on_text_changed = 'never'
 let g:ale_fix_on_save = 1
 let g:ale_echo_msg_format = '%linter% says: %s'
+let g:ale_echo_delay = 100 " wait longer than default before displaying messages
 let g:ale_maximum_file_size = 1000000 " don't try to lint massive files eg data files
 
 let g:ale_python_pylint_change_directory = 1
 let g:ale_python_mypy_ignore_invalid_syntax = 1
+
 
 " enable django pylint plugin for environments its installed in
 autocmd Filetype python call EnablePylintDjangoIfInstalled()
@@ -205,6 +215,10 @@ let g:ycm_filetype_blacklist = {
 \}
 let g:ycm_autoclose_preview_window_after_insertion = 1
 
+" disable diagnostics to avoid slowdown (in macvim anyway)
+let g:ycm_show_diagnostics_ui = 0
+let g:ycm_echo_current_diagnostic = 0
+
 " with jedi this will jump to the function/class definition, rather than the import
 nnoremap <leader>d :YcmCompleter GoToType<CR>
 " this will jump to the import
@@ -219,9 +233,6 @@ nmap <leader>g <Plug>(YCMHover)
 " exclude all files ignored by git and include untracked files
 nmap <C-p> :GFiles --exclude-standard --others --cached<CR>
 nmap <C-j> :Buffers<CR>
-" open at bottom of screen rather than in a pop-up
-" let g:fzf_layout = {'down': '40%'}
-" let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.6 } }
 
 
 " POLYGLOT SYNTAX
