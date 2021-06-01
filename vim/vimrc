@@ -104,6 +104,8 @@ augroup large_files
   autocmd Filetype json if getfsize(@%) > 1000 | setlocal syntax=off foldmethod=indent | endif
 augroup END
 
+" workaround for bug in gx - see https://github.com/vim/vim/issues/4738
+nnoremap gx :call netrw#BrowseX(netrw#GX(),0)<cr>
 
 " ---------------------------- SHORTCUT MAPPINGS ----------------------------
 " can't have inline commments here, whitespace after the mapping is added to it!
