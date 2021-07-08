@@ -87,6 +87,7 @@ set novisualbell
 set vb t_vb=
 
 set foldmethod=syntax
+set nofoldenable               " start with all folds open
 
 " diff in vertical splits by default, don't fold until 4 cols nested
 set diffopt=filler,vertical,foldcolumn:4
@@ -106,6 +107,9 @@ augroup END
 
 " workaround for bug in gx - see https://github.com/vim/vim/issues/4738
 nnoremap gx :call netrw#BrowseX(netrw#GX(),0)<cr>
+
+" open help in full height vertical split on the right
+cnoreabbrev h vert bo h
 
 " ---------------------------- SHORTCUT MAPPINGS ----------------------------
 " can't have inline commments here, whitespace after the mapping is added to it!
