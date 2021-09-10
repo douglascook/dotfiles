@@ -16,8 +16,6 @@ Plug 'ycm-core/YouCompleteMe', { 'do': './install.py --ts-completer' }
 Plug 'sheerun/vim-polyglot'
 Plug 'tpope/vim-commentary'
 
-Plug 'psf/black', { 'for': 'python' }
-
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
 Plug 'shumphrey/fugitive-gitlab.vim'
