@@ -12,7 +12,7 @@ let g:polyglot_disabled = ['yaml']
 call plug#begin('~/.vim/bundle')
 
 Plug 'dense-analysis/ale'
-Plug 'ycm-core/YouCompleteMe', { 'do': './install.py --ts-completer' }
+Plug 'ycm-core/YouCompleteMe', { 'do': './install.py --ts-completer --go-completer' }
 Plug 'sheerun/vim-polyglot'
 Plug 'tpope/vim-commentary'
 
@@ -185,7 +185,8 @@ let g:ale_linters = {
 \  'javascript': ['eslint'],
 \}
 let g:ale_fixers = {
-\  'python': ['black', 'isort']
+\  'python': ['black', 'isort'],
+\  'go': ['gofmt']
 \}
 " lint on leaving insert mode and opening or saving a buffer
 let g:ale_lint_on_text_changed = 'never'

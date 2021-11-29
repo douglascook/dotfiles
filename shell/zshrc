@@ -12,9 +12,7 @@ plugins=(
   docker
   docker-compose
   gitfast
-  osx
-  pip
-  python
+  macos
   kubectl
   rand-quote
 )
@@ -132,3 +130,13 @@ export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/tools/bin
 export PATH=$PATH:$ANDROID_HOME/platform-tools
 export PATH=$PATH:$ANDROID_HOME/emulator
 export JAVA_HOME="$(/usr/libexec/java_home)"
+
+
+### GO
+
+export PATH=$PATH:/Users/douglas/go/bin
+
+
+### Homebrew postgres
+
+export PATH=$PATH:/usr/local/opt/postgresql@12/bin
