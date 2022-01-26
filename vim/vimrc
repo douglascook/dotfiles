@@ -220,6 +220,11 @@ let g:ycm_filetype_blacklist = {
 \}
 let g:ycm_autoclose_preview_window_after_insertion = 1
 
+" open complete option descriptions in popup instead of preview window
+" TODO - how to scroll?
+let g:ycm_add_preview_to_completeopt = 1
+set completeopt=popup
+
 " disable diagnostics to avoid slowdown (in macvim anyway)
 let g:ycm_show_diagnostics_ui = 0
 let g:ycm_echo_current_diagnostic = 0
