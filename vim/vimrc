@@ -12,7 +12,7 @@ let g:polyglot_disabled = ['yaml']
 call plug#begin('~/.vim/bundle')
 
 Plug 'dense-analysis/ale'
-Plug 'ycm-core/YouCompleteMe', { 'do': './install.py --ts-completer --go-completer' }
+Plug 'ycm-core/YouCompleteMe', { 'do': './install.py --ts-completer --go-completer --rust-completer' }
 Plug 'sheerun/vim-polyglot'
 Plug 'tpope/vim-commentary'
 
@@ -136,6 +136,11 @@ endfunction
 
 nnoremap <leader>p :call InsertBreakpoint()<CR>
 
+" JSON pretty-print contents of buffer
+nnoremap <leader>j :% ! python -m json.tool<CR>
+" python 3.9 onwards
+nnoremap <leader>jl :% ! python -m json.tool --json-lines<CR>
+
 " colour schemes
 nnoremap <F2> :colorscheme wombat256mod<CR>
 nnoremap <F3> :colorscheme kalisi<CR>
@@ -181,12 +186,13 @@ let g:webdevicons_enable_airline_statusline = 0
 
 " ALE
 let g:ale_linters = {
-\  'python': ['pylint', 'flake8', 'mypy'],
+\  'python': ['pylint', 'mypy'],
 \  'javascript': ['eslint'],
 \}
 let g:ale_fixers = {
 \  'python': ['black', 'isort'],
-\  'go': ['gofmt']
+\  'go': ['gofmt'],
+\  'rust': ['rustfmt']
 \}
 " lint on leaving insert mode and opening or saving a buffer
 let g:ale_lint_on_text_changed = 'never'
@@ -197,6 +203,11 @@ let g:ale_maximum_file_size = 1000000 " don't try to lint massive files eg data 
 
 let g:ale_python_pylint_change_directory = 1
 let g:ale_python_mypy_ignore_invalid_syntax = 1
+" TODO remove these options if upgrading fixes the config file discovery
+" Airflow repo only - mypy 0.77 doesn't seem to discover the config file correctly
+let g:ale_python_mypy_options = '--config-file pyproject.toml'
+" something funky going on where the mypy option/config interferes with isort - bug in ALE?
+" let g:ale_python_isort_options = '--settings-path pyproject.toml'
 
 
 " enable django pylint plugin for environments its installed in
@@ -237,7 +248,6 @@ nnoremap <leader>f :YcmCompleter GoToDefinition<CR>
 let g:ycm_auto_hover = ''
 " manually turn it on for what's under the cursor
 nmap <leader>g <Plug>(YCMHover)
-
 
 " FZF
 " exclude all files ignored by git and include untracked files
