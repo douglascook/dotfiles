@@ -250,8 +250,7 @@ let g:ycm_auto_hover = ''
 nmap <leader>g <Plug>(YCMHover)
 
 " FZF
-" exclude all files ignored by git and include untracked files
-nmap <C-p> :GFiles --exclude-standard --others --cached<CR>
+nmap <C-p> :Files<CR>
 nmap <C-j> :Buffers<CR>
 
 

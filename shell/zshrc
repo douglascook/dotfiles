@@ -57,9 +57,6 @@ function checkout {
 
 ### HOMEBREW
 
-# fix brew installed ctags
-alias ctags="`brew --prefix`/bin/ctags"
-
 # git defaults to vi which will use built in vim instead of brew one
 export GIT_EDITOR=vim
 
@@ -69,8 +66,8 @@ alias tigs="tig status"
 ### FZF SETUP AND CONFIG
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-# use silver searcher so .gitignore is respected, applies to fzf in vim as well
-export FZF_DEFAULT_COMMAND='ag -g ""'
+# fd respects .gitignore by default
+export FZF_DEFAULT_COMMAND='fd --type f --hidden --exclude .git'
 
 # file search
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
