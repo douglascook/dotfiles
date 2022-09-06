@@ -186,7 +186,7 @@ let g:webdevicons_enable_airline_statusline = 0
 
 " ALE
 let g:ale_linters = {
-\  'python': ['pylint', 'mypy'],
+\  'python': ['pylint', 'mypy', 'flake8'],
 \  'javascript': ['eslint'],
 \}
 let g:ale_fixers = {
