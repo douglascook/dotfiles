@@ -53,6 +53,7 @@ set breakindent                " use same level indentation on wrapped lines
 set colorcolumn=80             " highlight at 80 characters
 set winwidth=90                " set current pane to width 90 (if less) when moving into it
 set cursorline                 " highlight current line
+set guicursor=a:blinkon0       " disable cursor blink in GUIs
 set scrolloff=8                " keep 3 lines visible around current line when scrolling
 set termguicolors              " use full 24-bit colours
 set guifont=Hack\ Nerd\ Font\ Mono:h14
