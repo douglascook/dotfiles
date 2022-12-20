@@ -12,7 +12,7 @@ let g:polyglot_disabled = ['yaml']
 call plug#begin('~/.vim/bundle')
 
 Plug 'dense-analysis/ale'
-Plug 'ycm-core/YouCompleteMe', { 'do': './install.py --ts-completer --go-completer --rust-completer' }
+Plug 'ycm-core/YouCompleteMe', { 'do': './install.py --ts-completer --go-completer' }
 Plug 'sheerun/vim-polyglot'
 Plug 'tpope/vim-commentary'
 
@@ -24,8 +24,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'vimwiki/vimwiki'
 
 Plug 'preservim/nerdtree'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
+Plug 'itchyny/lightline.vim'
 Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'flazz/vim-colorschemes'
@@ -143,9 +142,7 @@ nnoremap <leader>jl :% ! python -m json.tool --json-lines<CR>
 
 " colour schemes
 nnoremap <F2> :colorscheme wombat256mod<CR>
-nnoremap <F3> :colorscheme kalisi<CR>
 nnoremap <F4> :colorscheme solarized<CR>
-nnoremap <F5> :colorscheme base16-ateliersulphurpool<CR>
 nnoremap <F6> :colorscheme seoul256<CR>
 nnoremap <F10> :let &background = ( &background == "dark"? "light" : "dark" )<CR>
 
@@ -168,21 +165,17 @@ map <leader>n :NERDTreeToggle<CR>
 map <leader>m :NERDTreeFind<CR>
 
 
-" AIRLINE
+" LIGHTLINE
 set laststatus=2 " always display the status bar, even with single pane
-let g:airline_section_b = '' " don't show branch info
-let g:airline_inactive_collapse = 1
-let g:airline_powerline_fonts = 1
 
-let g:airline_highlighting_cache = 1
-" fewer extensions == faster
-let g:airline_extensions = ['fzf', 'quickfix']
-" devicons slow things down
-let g:webdevicons_enable_airline_tabline = 0
-let g:webdevicons_enable_airline_statusline = 0
-" experimental SHOULD be more performant...
-" let g:airline_experimental = 1
-
+" Show fewer things than default for inactive splits
+let g:lightline = {
+   \'inactive': {
+   \  'left': [['filename']],
+   \  'right': [[]],
+   \},
+   \'colorscheme': 'seoul256',
+\}
 
 " ALE
 let g:ale_linters = {
@@ -244,6 +237,7 @@ let g:ycm_echo_current_diagnostic = 0
 nnoremap <leader>d :YcmCompleter GoToType<CR>
 " this will jump to the import
 nnoremap <leader>f :YcmCompleter GoToDefinition<CR>
+nnoremap <leader>r :YcmCompleter GoToReferences<CR>
 " disable documentation auto popup
 let g:ycm_auto_hover = ''
 " manually turn it on for what's under the cursor
