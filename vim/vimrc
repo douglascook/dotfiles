@@ -194,6 +194,7 @@ let g:ale_fix_on_save = 1
 let g:ale_echo_msg_format = '%linter% says: %s'
 let g:ale_echo_delay = 100 " wait longer than default before displaying messages
 let g:ale_maximum_file_size = 1000000 " don't try to lint massive files eg data files
+let g:ale_virtualtext_cursor = 'disabled' " don't display messages as virtualtext
 
 let g:ale_python_pylint_change_directory = 1
 let g:ale_python_mypy_ignore_invalid_syntax = 1
