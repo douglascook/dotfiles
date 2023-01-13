@@ -205,11 +205,6 @@ let g:ale_virtualtext_cursor = 'disabled' " don't display messages as virtualtex
 
 let g:ale_python_pylint_change_directory = 1
 let g:ale_python_mypy_ignore_invalid_syntax = 1
-" TODO remove these options if upgrading fixes the config file discovery
-" Airflow repo only - mypy 0.77 doesn't seem to discover the config file correctly
-let g:ale_python_mypy_options = '--config-file pyproject.toml'
-" something funky going on where the mypy option/config interferes with isort - bug in ALE?
-" let g:ale_python_isort_options = '--settings-path pyproject.toml'
 
 
 " enable django pylint plugin for environments its installed in
