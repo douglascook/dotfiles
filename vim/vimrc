@@ -169,10 +169,17 @@ map <leader>m :NERDTreeFind<CR>
 " LIGHTLINE
 set laststatus=2 " always display the status bar, even with single pane
 
-" Show fewer things than default for inactive splits
+" Use relative paths, path only for inactive split
 let g:lightline = {
+   \'active': {
+   \  'left': [['mode', 'paste'],
+   \           ['readonly', 'relativepath', 'modified']],
+   \  'right': [['lineinfo'],
+   \            ['percent'],
+   \            ['fileformat', 'fileencoding', 'filetype']] 
+   \},
    \'inactive': {
-   \  'left': [['filename']],
+   \  'left': [['relativepath']],
    \  'right': [[]],
    \},
    \'colorscheme': 'seoul256',
