@@ -6,18 +6,21 @@ export UPDATE_ZSH_DAYS=8
 ZSH_THEME="muse"
 HIST_STAMPS="yyyy-mm-dd"
 
-JIRA_RAPID_BOARD="true"
 plugins=(
   aws
   docker
-  docker-compose
   gitfast
   macos
-  kubectl
   rand-quote
 )
 
+# Don't show AWS profile info in prompt
+SHOW_AWS_PROMPT=false
+
 source $ZSH/oh-my-zsh.sh
+
+# Display a quote!
+quote
 
 
 ### GENERAL
@@ -134,6 +137,6 @@ export JAVA_HOME="$(/usr/libexec/java_home)"
 export PATH=$PATH:/Users/douglas/go/bin
 
 
-### Homebrew postgres
+### HOMEBREW POSTGRES
 
 export PATH=$PATH:/usr/local/opt/postgresql@12/bin
