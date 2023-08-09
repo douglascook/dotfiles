@@ -1,12 +1,5 @@
 # See https://github.com/Homebrew/homebrew-bundle
 
-# might not need all these taps?
-tap "aws/tap"
-tap "homebrew/cask"
-tap "homebrew/cask-versions"
-tap "homebrew/core"
-tap "homebrew/services"
-
 brew "git"
 brew "git-lfs"
 brew "tig"
@@ -23,10 +16,8 @@ brew "shellcheck"
 brew "figlet"
 brew "cowsay"
 
-brew "awscli"
-
 cask "macvim"
-cask "docker"
+cask "dbeaver-community"
 cask "hammerspoon"
 cask "postman"
 cask "monitorcontrol"
@@ -34,5 +25,18 @@ cask "quicklook-json"
 cask "qlmarkdown"
 cask "qlstephen"
 cask "qlcolorcode"
-cask "vlc"
 cask "grandperspective"
+cask "flux"
+
+tap "homebrew/cask-fonts"
+cask "font-hack-nerd-font"
+
+# Kheiron bits
+brew "awscli"
+brew "python@3.10"
+brew "python@3.9"
+brew "postgresql@15"
+
+# Currently done through Kheiron installer
+#cask "docker"
+#cask "vlc"
