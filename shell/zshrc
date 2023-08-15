@@ -17,6 +17,11 @@ plugins=(
 # Don't show AWS profile info in prompt
 SHOW_AWS_PROMPT=false
 
+# Fix Docker completion
+zstyle ':completion:*:*:docker:*' option-stacking yes
+zstyle ':completion:*:*:docker-*:*' option-stacking yes
+zstyle ':omz:plugins:docker' legacy-completion yes
+
 source $ZSH/oh-my-zsh.sh
 
 # Display a quote!
