@@ -6,4 +6,4 @@ setlocal tabstop=4          " set tab width to 4
 setlocal shiftwidth=4
 setlocal softtabstop=4      " for deleting 4 spaces at a time?
 
-set colorcolumn=88          " to match with black
+setlocal colorcolumn=88     " to match with black
