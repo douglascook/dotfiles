@@ -12,7 +12,7 @@ let g:polyglot_disabled = ['yaml']
 call plug#begin('~/.vim/bundle')
 
 Plug 'dense-analysis/ale'
-Plug 'ycm-core/YouCompleteMe', { 'do': './install.py --ts-completer --go-completer' }
+Plug 'ycm-core/YouCompleteMe', { 'do': './install.py' }
 Plug 'sheerun/vim-polyglot'
 Plug 'tpope/vim-commentary'
 
@@ -205,6 +205,8 @@ let g:ale_virtualtext_cursor = 'disabled' " don't display messages as virtualtex
 
 let g:ale_python_pylint_change_directory = 1
 let g:ale_python_mypy_ignore_invalid_syntax = 1
+
+let g:ale_sql_sqlfluff_options = '--dialect postgres'
 
 
 " enable django pylint plugin for environments its installed in
