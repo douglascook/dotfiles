@@ -8,8 +8,7 @@ ln -s /Users/douglas/dotfiles/shell/fzf.zsh ~/.fzf.zsh
 ln -s /Users/douglas/dotfiles/vim/vimrc ~/.vimrc
 ln -s /Users/douglas/dotfiles/vim/gvimrc ~/.gvimrc
 mkdir -p ~/.vim/after/ftplugin
-ln -s /Users/douglas/dotfiles/vim/after/ftplugin/python.vim ~/.vim/after/ftplugin/python.vim
-ln -s /Users/douglas/dotfiles/vim/after/ftplugin/yaml.vim ~/.vim/after/ftplugin/yaml.vim
+ln -s /Users/douglas/dotfiles/vim/after/ftplugin ~/.vim/after/ftplugin
 
 # PYTHON
 ln -s /Users/douglas/dotfiles/python/pylintrc ~/.pylintrc
