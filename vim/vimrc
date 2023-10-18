@@ -12,7 +12,7 @@ let g:polyglot_disabled = ['yaml']
 call plug#begin('~/.vim/bundle')
 
 Plug 'dense-analysis/ale'
-Plug 'ycm-core/YouCompleteMe', { 'do': './install.py' }
+Plug 'ycm-core/YouCompleteMe', { 'do': './install.py --ts-completer' }
 Plug 'sheerun/vim-polyglot'
 Plug 'tpope/vim-commentary'
 
@@ -187,7 +187,7 @@ let g:lightline = {
 
 " ALE
 let g:ale_sign_error = '>>'
-let g:ale_sign_warning = '--'
+let g:ale_sign_warning = '~~'
 let g:ale_sign_info = '--'
 
 let g:ale_linters = {
