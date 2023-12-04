@@ -6,7 +6,7 @@ if empty(glob('~/.vim/autoload/plug.vim'))
 endif
 
 " need to set this before loading polyglot :|
-let g:polyglot_disabled = ['yaml']
+let g:polyglot_disabled = ['sensible', 'yaml']
 
 " -------------------------- PLUGIN SETUP ---------------------------------
 call plug#begin('~/.vim/bundle')
@@ -137,9 +137,9 @@ endfunction
 nnoremap <leader>p :call InsertBreakpoint()<CR>
 
 " JSON pretty-print contents of buffer
-nnoremap <leader>j :% ! python -m json.tool<CR>
+nnoremap <leader>j :% ! python -m json.tool --indent=2<CR>
 " python 3.9 onwards
-nnoremap <leader>jl :% ! python -m json.tool --json-lines<CR>
+nnoremap <leader>jl :% ! python -m json.tool --json-lines --indent=2<CR>
 
 " colour schemes
 nnoremap <F2> :colorscheme wombat256mod<CR>
@@ -236,7 +236,6 @@ let g:ycm_autoclose_preview_window_after_insertion = 1
 
 " open complete option descriptions in popup instead of preview window
 " TODO - how to scroll?
-let g:ycm_add_preview_to_completeopt = 1
 set completeopt=popup
 
 " disable diagnostics to avoid slowdown (in macvim anyway)
