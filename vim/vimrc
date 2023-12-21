@@ -194,8 +194,10 @@ let g:ale_linters = {
 \  'python': ['pylint', 'mypy', 'flake8', 'ruff'],
 \  'javascript': ['eslint'],
 \}
+" Fixers are applied in order. Keep black last so that it trumps ruff on
+" any disagreements.
 let g:ale_fixers = {
-\  'python': ['black', 'isort'],
+\  'python': ['isort', 'ruff_format', 'black'],
 \  'go': ['gofmt'],
 \  'rust': ['rustfmt']
 \}
