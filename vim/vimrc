@@ -191,13 +191,12 @@ let g:ale_sign_warning = '~~'
 let g:ale_sign_info = '--'
 
 let g:ale_linters = {
-\  'python': ['pylint', 'mypy', 'flake8', 'ruff'],
+\  'python': ['ruff', 'mypy'],
 \  'javascript': ['eslint'],
 \}
-" Fixers are applied in order. Keep black last so that it trumps ruff on
-" any disagreements.
+" Fixers are applied in order.
 let g:ale_fixers = {
-\  'python': ['isort', 'ruff_format', 'black'],
+\  'python': ['ruff', 'ruff_format'],
 \  'go': ['gofmt'],
 \  'rust': ['rustfmt']
 \}
@@ -209,10 +208,12 @@ let g:ale_echo_delay = 100 " wait longer than default before displaying messages
 let g:ale_maximum_file_size = 1000000 " don't try to lint massive files eg data files
 let g:ale_virtualtext_cursor = 'disabled' " don't display messages as virtualtext
 
-let g:ale_python_pylint_change_directory = 1
+let g:ale_python_ruff_change_directory = 1
+let g:ale_python_ruff_format_change_directory = 1
+
 let g:ale_python_mypy_ignore_invalid_syntax = 1
 
-let g:ale_sql_sqlfluff_options = '--dialect postgres'
+let g:ale_sql_sqlfluff_options = '--config airflow/pyproject.toml'
 
 
 " enable django pylint plugin for environments its installed in
