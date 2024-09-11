@@ -12,7 +12,7 @@ let g:polyglot_disabled = ['sensible', 'yaml']
 call plug#begin('~/.vim/bundle')
 
 Plug 'dense-analysis/ale'
-Plug 'ycm-core/YouCompleteMe', { 'do': './install.py --ts-completer' }
+Plug 'ycm-core/YouCompleteMe', { 'do': './install.py' }
 Plug 'sheerun/vim-polyglot'
 Plug 'tpope/vim-commentary'
 
@@ -193,6 +193,7 @@ let g:ale_sign_info = '--'
 let g:ale_linters = {
 \  'python': ['ruff', 'mypy'],
 \  'javascript': ['eslint'],
+\  'sql': ['sqlfluff'],
 \}
 " Fixers are applied in order.
 let g:ale_fixers = {
@@ -213,7 +214,7 @@ let g:ale_python_ruff_format_change_directory = 1
 
 let g:ale_python_mypy_ignore_invalid_syntax = 1
 
-let g:ale_sql_sqlfluff_options = '--config airflow/pyproject.toml'
+let g:ale_sql_sqlfluff_options = '--dialect postgres --config pyproject.toml'
 
 
 " enable django pylint plugin for environments its installed in

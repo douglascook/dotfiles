@@ -33,6 +33,7 @@ quote
 export HISTFILE=~/.zsh_history
 export HISTSIZE=50000000
 export HISTCONTROL=ignoredups
+setopt INC_APPEND_HISTORY
 
 # default to vim rather than vi
 export EDITOR=vim
@@ -144,4 +145,4 @@ export PATH=$PATH:/Users/douglas/go/bin
 
 ### HOMEBREW POSTGRES
 
-export PATH=$PATH:/usr/local/opt/postgresql@15/bin
+export PATH=$PATH:/usr/local/opt/postgresql@16/bin
