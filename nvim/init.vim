@@ -27,6 +27,7 @@ Plug 'vimwiki/vimwiki'
 
 " New for neovim
 Plug 'nvim-treesitter/nvim-treesitter'
+Plug 'stevearc/conform.nvim'
 
 Plug 'neovim/nvim-lspconfig'
 Plug 'hrsh7th/nvim-cmp'
@@ -41,7 +42,7 @@ call plug#end()
 
 lua <<EOF
   -- Set up nvim-cmp.
-  local cmp = require'cmp'
+  local cmp = require 'cmp'
 
   local has_words_before = function()
     unpack = unpack or table.unpack
@@ -55,15 +56,11 @@ lua <<EOF
 
   cmp.setup({
     snippet = {
-      -- REQUIRED - you must specify a snippet engine
       expand = function(args)
-        vim.fn['vsnip#anonymous'](args.body) -- For `vsnip` users.
+        vim.fn['vsnip#anonymous'](args.body)
       end,
     },
-    window = {
-      -- completion = cmp.config.window.bordered(),
-      -- documentation = cmp.config.window.bordered(),
-    },
+    window = {},
     mapping = cmp.mapping.preset.insert({
       ['<C-b>'] = cmp.mapping.scroll_docs(-4),
       ['<C-f>'] = cmp.mapping.scroll_docs(4),
@@ -94,10 +91,7 @@ lua <<EOF
 
     sources = cmp.config.sources({
       { name = 'nvim_lsp' },
-      { name = 'vsnip' }, -- For vsnip users.
-      -- { name = 'luasnip' }, -- For luasnip users.
-      -- { name = 'ultisnips' }, -- For ultisnips users.
-      -- { name = 'snippy' }, -- For snippy users.
+      { name = 'vsnip' },
     }, {
       { name = 'buffer' },
     })
@@ -148,6 +142,25 @@ lua <<EOF
     }
   })
   vim.o.updatetime = 150
+
+  -- TODO should be able to just use LSP?
+  -- Setup conform plugin for autoformatting
+  local conform = require 'conform'
+  conform.setup({
+    formatters_by_ft = {
+      lua = { "stylua" },
+    },
+    format_on_save = {
+      -- These options will be passed to conform.format()
+      timeout_ms = 500,
+      lsp_format = "fallback",
+    },
+    formatters = {
+      stylua = {
+        append_args = { "--column-width=88" }
+      }
+    }
+  })
 
 EOF
 
