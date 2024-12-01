@@ -41,7 +41,7 @@ Plug 'S1M0N38/love2d.nvim'
 call plug#end()
 
 lua <<EOF
-  -- Set up nvim-cmp.
+  ----------------------------- Set up nvim-cmp -------------------------------
   local cmp = require 'cmp'
 
   local has_words_before = function()
@@ -116,9 +116,10 @@ lua <<EOF
     matching = { disallow_symbol_nonprefix_matching = false }
   })
 
-  -- Set up lspconfig.
+  ----------------------------- Set up lspconfig -------------------------------
   local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
+  -- LUA
   require 'lspconfig'.lua_ls.setup {
     settings = {
       capabilities = capabilities,
@@ -161,6 +162,23 @@ lua <<EOF
       }
     }
   })
+
+  -- ELIXIR
+  require 'lspconfig'.elixirls.setup{
+    cmd = { "/usr/local/Cellar/elixir-ls/0.24.1/bin/elixir-ls" };
+  }
+
+  ----------------------------- Set up treesitter -----------------------------
+  require 'nvim-treesitter.configs'.setup {
+    ensure_installed = {
+      'elixir',
+      'lua',
+    },
+    -- Seems like highlighting is not entirely enabled by default?
+    highlight = {
+      enable = true
+    },
+  }
 
 EOF
 
