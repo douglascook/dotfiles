@@ -92,7 +92,7 @@ bindkey '^F' fzf-file-widget
 
 ### PYTHON
 
-export PATH=/usr/local/opt/python/libexec/bin:$PATH
+export PATH=/usr/local/opt/python@3/libexec/bin:$PATH
 
 export PYLINTRC=/Users/douglas/.pylintrc
 export PYTHONBREAKPOINT=ipdb.set_trace
