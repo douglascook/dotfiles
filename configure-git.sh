@@ -15,3 +15,6 @@ git config --global diff.renames copies
 # Enable autosquash by default when rebasing, for working with fixup commits.
 # See https://andrewlock.net/smoother-rebases-with-auto-squashing-git-commits/
 git config --global rebase.autosquash true
+
+# Enable rerere for less painful rebasing https://git-scm.com/book/en/v2/Git-Tools-Rerere
+git config --global rerere.enabled true
