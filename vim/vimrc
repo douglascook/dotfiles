@@ -27,7 +27,7 @@ Plug 'preservim/nerdtree'
 Plug 'itchyny/lightline.vim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
-Plug 'flazz/vim-colorschemes'
+Plug 'rafi/awesome-vim-colorschemes'
 Plug 'tpope/vim-unimpaired'
 Plug 'ryanoasis/vim-devicons'
 
@@ -143,7 +143,7 @@ nnoremap <leader>jl :% ! python -m json.tool --json-lines --indent=2<CR>
 
 " colour schemes
 nnoremap <F2> :colorscheme wombat256mod<CR>
-nnoremap <F4> :colorscheme solarized<CR>
+nnoremap <F4> :colorscheme solarized8<CR>
 nnoremap <F6> :colorscheme seoul256<CR>
 nnoremap <F10> :let &background = ( &background == "dark"? "light" : "dark" )<CR>
 
