@@ -142,9 +142,19 @@ nnoremap <leader>j :% ! python -m json.tool --indent=2<CR>
 nnoremap <leader>jl :% ! python -m json.tool --json-lines --indent=2<CR>
 
 " colour schemes
-nnoremap <F2> :colorscheme wombat256mod<CR>
-nnoremap <F4> :colorscheme solarized8<CR>
-nnoremap <F6> :colorscheme seoul256<CR>
+function UpdateColorscheme(colour)
+  execute 'colorscheme' a:colour
+  if a:colour == "solarized8"
+    let g:lightline.colorscheme = "solarized"
+  else
+    let g:lightline.colorscheme = a:colour
+  endif
+  call ReloadLightline()
+endfunction
+
+nnoremap <F2> :call UpdateColorscheme('wombat256mod')<CR>
+nnoremap <F4> :call UpdateColorscheme('solarized8')<CR>
+nnoremap <F6> :call UpdateColorscheme('seoul256')<CR>
 nnoremap <F10> :let &background = ( &background == "dark"? "light" : "dark" )<CR>
 
 " Use silver searcher for grepping if available
@@ -184,6 +194,13 @@ let g:lightline = {
    \},
    \'colorscheme': 'seoul256',
 \}
+
+" Need to reload in order to pick up colorscheme changes
+function! ReloadLightline()
+  call lightline#init()
+  call lightline#colorscheme()
+  call lightline#update()
+endfunction
 
 " ALE
 let g:ale_sign_error = '>>'
