@@ -210,12 +210,16 @@ let g:ale_sign_info = '--'
 let g:ale_linters = {
 \  'python': ['ruff', 'pyright', 'mypy'],
 \  'javascript': ['eslint'],
+\  'typescript': ['tsserver', 'eslint'],
+\  'typescriptreact': ['tsserver', 'eslint'],
 \  'sql': ['sqlfluff'],
 \}
 " Fixers are applied in order.
 let g:ale_fixers = {
 \  'python': ['ruff', 'ruff_format'],
 \  'go': ['gofmt'],
+\  'typescript': ['eslint', 'prettier'],
+\  'typescriptreact': ['eslint', 'prettier'],
 \  'rust': ['rustfmt']
 \}
 " lint on leaving insert mode and opening or saving a buffer
