@@ -130,7 +130,12 @@ nnoremap <leader>q :q<CR>
 
 " add a python breakpoint
 function! InsertBreakpoint()
-    let trace = expand("breakpoint()")
+    if &filetype == 'python'
+      let trace = expand("breakpoint()")
+    else
+      let trace = expand("debugger;")
+    endif
+
     execute "normal o".trace
 endfunction
 
