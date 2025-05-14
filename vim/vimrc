@@ -30,6 +30,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'rafi/awesome-vim-colorschemes'
 Plug 'tpope/vim-unimpaired'
 Plug 'ryanoasis/vim-devicons'
+Plug 'preservim/vim-indent-guides'
 
 call plug#end()
 
@@ -308,3 +309,7 @@ let g:paredit_mode = 0 " don't dicate parentheses!
 let g:vimwiki_folding = 'expr' " enable folding
 let g:vimwiki_global_ext = 0 " don't enable for random markdown files!
 let g:vimwiki_list = [{'path': '~/vimwiki/', 'syntax': 'markdown', 'ext': '.md'}]
+
+" INDENT GUIDES
+" Display as thinner lines
+let g:indent_guides_guide_size = 1
