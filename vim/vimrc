@@ -273,6 +273,9 @@ set completeopt=popup
 let g:ycm_show_diagnostics_ui = 0
 let g:ycm_echo_current_diagnostic = 0
 
+" don't prompt before loading extra_conf files
+let g:ycm_confirm_extra_conf = 0
+
 " with jedi this will jump to the function/class definition, rather than the import
 nnoremap <leader>d :YcmCompleter GoToType<CR>
 " this will jump to the import
