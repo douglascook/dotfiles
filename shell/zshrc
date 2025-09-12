@@ -9,6 +9,7 @@ HIST_STAMPS="yyyy-mm-dd"
 plugins=(
   aws
   docker
+  fzf
   gitfast
   macos
   rand-quote
@@ -66,6 +67,8 @@ function checkout {
 
 ### HOMEBREW
 
+# use vim from macvim instead of old system version
+alias vim="/Applications/MacVim.app/Contents/MacOS/Vim"
 # git defaults to vi which will use built in vim instead of brew one
 export GIT_EDITOR=vim
 
