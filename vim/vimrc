@@ -286,6 +286,19 @@ let g:ycm_auto_hover = ''
 " manually turn it on for what's under the cursor
 nmap <leader>g <Plug>(YCMHover)
 
+" Custom language servers
+let g:ycm_language_server = []
+if executable('terraform-ls')
+    let g:ycm_language_server += [
+        \   {
+        \     'name': 'terraform',
+        \     'cmdline': [ 'terraform-ls', 'serve' ],
+        \     'filetypes': [ 'terraform' ],
+        \     'project_root_files': [ '*.tf', '*.tfvars' ],
+        \   },
+        \ ]
+endif
+
 " FZF
 nmap <C-p> :Files<CR>
 nmap <C-j> :Buffers<CR>
