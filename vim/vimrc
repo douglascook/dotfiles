@@ -32,6 +32,8 @@ Plug 'tpope/vim-unimpaired'
 Plug 'ryanoasis/vim-devicons'
 Plug 'preservim/vim-indent-guides'
 
+Plug 'DanBradbury/copilot-chat.vim'
+
 call plug#end()
 
 
@@ -329,3 +331,8 @@ let g:vimwiki_list = [{'path': '~/vimwiki/', 'syntax': 'markdown', 'ext': '.md'}
 " INDENT GUIDES
 " Display as thinner lines
 let g:indent_guides_guide_size = 1
+
+" COPILOT-CHAT
+nnoremap <leader>cc :CopilotChatOpen<CR>
+nnoremap <leader>ct :CopilotChatToggle<CR>
+vmap <leader>c <Plug>CopilotChatAddSelection
