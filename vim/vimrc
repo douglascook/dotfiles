@@ -106,9 +106,6 @@ augroup large_files
   autocmd Filetype json if getfsize(@%) > 1000 | setlocal syntax=off foldmethod=indent | endif
 augroup END
 
-" workaround for bug in gx - see https://github.com/vim/vim/issues/4738
-nnoremap gx :call netrw#BrowseX(netrw#GX(),0)<cr>
-
 " open help in full height vertical split on the right
 cnoreabbrev h vert bo h
 
