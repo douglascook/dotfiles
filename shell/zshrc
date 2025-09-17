@@ -78,15 +78,13 @@ alias tigs="tig status"
 ### FZF SETUP AND CONFIG
 source <(fzf --zsh)
 
+export FZF_DEFAULT_OPTS="--reverse --no-mouse"
 # fd respects .gitignore by default
 export FZF_DEFAULT_COMMAND='fd --type f --hidden --strip-cwd-prefix --exclude .git'
 
 # file search
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
-export FZF_CTRL_T_OPTS="--reverse --no-mouse --height 60% --preview 'head -50 {}'"
-
-# history search
-export FZF_CTRL_R_OPTS="--reverse --no-mouse"
+export FZF_CTRL_T_OPTS="--height 60% --preview 'head -50 {}'"
 
 # remap file find binding (remove and set)
 bindkey -r '^T'
