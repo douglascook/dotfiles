@@ -225,7 +225,8 @@ let g:ale_fixers = {
 \  'go': ['gofmt'],
 \  'typescript': ['eslint', 'prettier'],
 \  'typescriptreact': ['eslint', 'prettier'],
-\  'rust': ['rustfmt']
+\  'rust': ['rustfmt'],
+\  'terraform': ['terraform']
 \}
 " lint on leaving insert mode and opening or saving a buffer
 let g:ale_lint_on_text_changed = 'never'
