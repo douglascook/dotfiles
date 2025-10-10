@@ -93,6 +93,8 @@ set nofoldenable               " start with all folds open
 " diff in vertical splits by default, don't fold until 4 cols nested
 set diffopt=filler,vertical,foldcolumn:4
 
+set nojoinspaces " don't put double space after full stop when joining lines
+
 " set working directory
 cd ./
 
