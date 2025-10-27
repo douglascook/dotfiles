@@ -164,9 +164,9 @@ nnoremap <F4> :call UpdateColorscheme('solarized8')<CR>
 nnoremap <F6> :call UpdateColorscheme('seoul256')<CR>
 nnoremap <F10> :let &background = ( &background == "dark"? "light" : "dark" )<CR>
 
-" Use silver searcher for grepping if available
-if executable('ag')
-  set grepprg=ag\ --nogroup\ --nocolor\ --column
+" Use ripgrep for grepping if available
+if executable('rg')
+  set grepprg=rg\ --vimgrep\ --smart-case\ --column
   set grepformat=%f:%l:%c%m
 endif
 
